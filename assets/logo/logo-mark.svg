@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <g transform="translate(8 14)">
+    <rect x="0" y="6" width="44" height="40" rx="6" fill="#1B5E20"></rect>
+    <rect x="6" y="0" width="32" height="10" rx="3" fill="#1B5E20"></rect>
+    <path d="M10 18 Q22 8 34 18 Q28 14 22 18 Q16 14 10 18 Z" fill="#43A047"></path>
+    <circle cx="16" cy="30" r="4" fill="#D4A017"></circle>
+    <circle cx="28" cy="34" r="3" fill="#C0392B"></circle>
+    <circle cx="22" cy="38" r="3" fill="#66BB6A"></circle>
+  </g>
+  <text x="62" y="36" font-family="Poppins, sans-serif" font-size="20" font-weight="800" fill="#0E3812" letter-spacing="-0.5">Saladas</text>
+  <text x="62" y="58" font-family="Poppins, sans-serif" font-size="14" font-weight="600" fill="#1B5E20" letter-spacing="3">NO POTE</text>
+</svg>
