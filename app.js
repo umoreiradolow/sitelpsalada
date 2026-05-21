@@ -228,11 +228,13 @@
 
   function initHeroVideo() {
     const overlay = document.getElementById('videoOverlay');
+    const catcher = document.getElementById('videoClickCatcher');
     if (!overlay) return;
     
     overlay.addEventListener('click', function() {
       // Hide the overlay immediately for a snappy UX
       overlay.classList.add('is-hidden');
+      if (catcher) catcher.style.display = 'block'; // Show the click catcher
       
       // Try to unmute, restart from beginning (hook), and play the video with audio
       try {
@@ -264,6 +266,22 @@
         console.warn("Error unmuting/restarting video:", e);
       }
     });
+
+    if (catcher) {
+      catcher.addEventListener('click', function() {
+        if (vimeoPlayer && typeof vimeoPlayer.getPaused === 'function') {
+          vimeoPlayer.getPaused().then(function(paused) {
+            if (paused) {
+              vimeoPlayer.play();
+            } else {
+              vimeoPlayer.pause();
+            }
+          }).catch(e => {
+            console.warn("Vimeo getPaused failed:", e);
+          });
+        }
+      });
+    }
   }
 
   function loadVimeoAPI() {
@@ -274,7 +292,7 @@
         const iframe = document.getElementById('vimeo-player');
         if (iframe && typeof Vimeo !== 'undefined') {
           vimeoPlayer = new Vimeo.Player(iframe);
-          vimeoPlayer.setLoop(true);
+          vimeoPlayer.setLoop(false); // Do not loop, stop after playing once
         }
       } catch (e) {
         console.warn("Vimeo Player initialization failed:", e);
@@ -288,8 +306,17 @@
     }
   }
 
+  function updateUrgencyDate() {
+    const dateEl = document.getElementById('urgencyDate');
+    if (!dateEl) return;
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const today = new Date();
+    dateEl.textContent = today.toLocaleDateString('pt-BR', options);
+  }
+
   // ---------- Boot ----------
   function boot() {
+    updateUrgencyDate();
     renderMarquee();
     initFAQ();
     initLegal();

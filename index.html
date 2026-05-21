@@ -30,6 +30,11 @@
 </head>
 <body>
 
+  <!-- Top Urgency Banner -->
+  <div class="urgency-banner" id="urgencyBanner">
+    <span class="urgency-banner__text">🚨 OFERTA EXCLUSIVA: APENAS HOJE, <span id="urgencyDate"></span>! 🚨</span>
+  </div>
+
   <main>
   <!-- ============================================================ HERO ============================================================ -->
   <section class="hero" data-screen-label="01 Hero">
@@ -53,7 +58,7 @@
         <div class="hero__video-container">
           <iframe id="vimeo-player" 
                   title="vimeo-player" 
-                  src="https://player.vimeo.com/video/1194529677?h=6f43bce623&autoplay=1&muted=1&loop=1&autopause=0&controls=0&playsinline=1&api=1" 
+                  src="https://player.vimeo.com/video/1194529677?h=6f43bce623&autoplay=1&muted=1&loop=0&autopause=0&controls=0&playsinline=1&api=1" 
                   width="640" 
                   height="360" 
                   frameborder="0" 
@@ -61,6 +66,7 @@
                   referrerpolicy="strict-origin-when-cross-origin" 
                   allowfullscreen>
           </iframe>
+          <div class="video-click-catcher" id="videoClickCatcher" style="position: absolute; inset: 0; z-index: 5; cursor: pointer; display: none;"></div>
           <div class="video-overlay" id="videoOverlay">
             <button class="video-overlay__btn" type="button">
               <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -345,7 +351,7 @@
           <p class="testimonial__text">"Gente, eu já tentei de tudo pra comer melhor durante a semana e sempre abandonava no meio. Aí experimentei as saladas no pote e mudou tudo. Preparo no domingo enquanto assisto série e na segunda já tá tudo pronto. Minha filha até pediu pra eu fazer pra ela também!"</p>
           <div class="testimonial__who">
             <img class="testimonial__avatar" src="assets/avatars/cleide.webp" alt="Cleide R." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Cleide R.</div><div class="testimonial__age">44 anos</div></div>
+            <div><div class="testimonial__name">Cleide R.</div><div class="testimonial__age">44 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
           </div>
         </article>
         <article class="testimonial">
@@ -359,7 +365,7 @@
           <p class="testimonial__text">"Confesso que fiquei desconfiada no começo, achei que ia ser mais uma coisa que eu compraria e não usaria. Mas as receitas são tão fáceis que até eu, que não tenho jeito na cozinha, consegui. A salada com molho de amendoim thai virou minha favorita, como toda semana."</p>
           <div class="testimonial__who">
             <img class="testimonial__avatar" src="assets/avatars/marcia.webp" alt="Marcia T." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Marcia T.</div><div class="testimonial__age">52 anos</div></div>
+            <div><div class="testimonial__name">Marcia T.</div><div class="testimonial__age">52 anos · <span class="testimonial__tag testimonial__tag--simples">Comprou o Pacote Simples</span></div></div>
           </div>
         </article>
         <article class="testimonial">
@@ -373,7 +379,7 @@
           <p class="testimonial__text">"Tô na menopausa e tava sofrendo pra manter uma alimentação decente no dia a dia. Essas saladas me salvaram. Já economizei uns R$400 de delivery só esse mês. E o melhor — meu marido parou de torcer o nariz pra salada quando viu as receitas que eu tava fazendo."</p>
           <div class="testimonial__who">
             <img class="testimonial__avatar" src="assets/avatars/rosangela.webp" alt="Rosangela F." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Rosangela F.</div><div class="testimonial__age">47 anos</div></div>
+            <div><div class="testimonial__name">Rosangela F.</div><div class="testimonial__age">47 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
           </div>
         </article>
         <article class="testimonial">
@@ -387,7 +393,7 @@
           <p class="testimonial__text">"Trabalho fora o dia todo e quando chegava em casa não tinha energia pra cozinhar nada saudável. Agora abro a geladeira e já tem cinco potes me esperando. Parece bobagem mas isso mudou minha semana de verdade. Me sinto mais disposta, mais leve."</p>
           <div class="testimonial__who">
             <img class="testimonial__avatar" src="assets/avatars/patricia.webp" alt="Patricia M." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Patricia M.</div><div class="testimonial__age">43 anos</div></div>
+            <div><div class="testimonial__name">Patricia M.</div><div class="testimonial__age">43 anos · <span class="testimonial__tag testimonial__tag--simples">Comprou o Pacote Simples</span></div></div>
           </div>
         </article>
         <article class="testimonial">
@@ -401,7 +407,7 @@
           <p class="testimonial__text">"O que me conquistou foi a salada Big Mac no pote. Minha neta viu e achou que era brincadeira, mas provou e pediu a receita! Hoje faço pra mim e pra ela. Nunca pensei que ia falar isso sobre salada, mas é viciante mesmo."</p>
           <div class="testimonial__who">
             <img class="testimonial__avatar" src="assets/avatars/silvana.webp" alt="Silvana C." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Silvana C.</div><div class="testimonial__age">49 anos</div></div>
+            <div><div class="testimonial__name">Silvana C.</div><div class="testimonial__age">49 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
           </div>
         </article>
       </div>
@@ -433,6 +439,11 @@
             <div class="price-card__sub">pagamento único</div>
           </div>
           <a href="https://pay.wiapy.com/c4PsTJwHnw" class="btn btn--secondary btn--full" data-checkout="simples" aria-label="Comprar agora — Pacote Simples por R$10,00">COMPRAR AGORA</a>
+          <div class="security-strip">
+            <span>🔒 Compra 100% Segura</span>
+            <span>⚡ Acesso Imediato</span>
+            <span>↺ 7 Dias de Garantia</span>
+          </div>
         </article>
 
         <article class="price-card price-card--pro">
