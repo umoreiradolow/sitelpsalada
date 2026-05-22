@@ -348,48 +348,66 @@
     const secBtn = document.getElementById('upsellSecBtn');
     const mainBtn = document.getElementById('upsellMainBtn');
 
-    // 1. Interceptar clique no botão do Pacote Simples
+    // 1. Interceptar clique no botão do Pacote Simples da LP e abrir o modal
     simplesBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        e.preventDefault(); // Impede o redirecionamento direto
+        e.preventDefault(); // Impede o redirecionamento direto, sempre abrindo o modal
         modal.classList.add('is-open');
         document.body.style.overflow = 'hidden'; // Impede scroll na LP por trás
       });
     });
 
-    // 2. Função para recusar a oferta e ir para o checkout do Pacote Simples (R$10,00)
-    function declineUpsell(e) {
+    // 2. Função para apenas fechar o modal e permitir que o usuário continue navegando no site livremente
+    function closeUpsellModal(e) {
       if (e) e.preventDefault();
       modal.classList.remove('is-open');
       document.body.style.overflow = '';
-      window.location.href = 'https://pay.wiapy.com/c4PsTJwHnw'; // Redireciona imediatamente para o Simples
     }
 
-    if (closeBtn) closeBtn.addEventListener('click', declineUpsell);
-    if (secBtn) secBtn.addEventListener('click', declineUpsell);
+    // O botão "X" apenas fecha o modal, deixando o usuário livre no site
+    if (closeBtn) closeBtn.addEventListener('click', closeUpsellModal);
 
-    // Fechar ao clicar no overlay escuro de fundo
+    // O botão cinza secundário (Simples por R$10,00) deve redirecionar o usuário para o respectivo checkout
+    if (secBtn) {
+      secBtn.addEventListener('click', () => {
+        try {
+          if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Pacote Simples (Downsell)', value: 10.00, currency: 'BRL' });
+          if (window.gtag) gtag('event', 'begin_checkout', { currency: 'BRL', value: 10.00, items: [{ item_name: 'Pacote Simples (Downsell)', price: 10.00, quantity: 1 }] });
+          if (window.clarity) clarity('event', 'click_comprar_downsell_simples');
+        } catch(err) {}
+        
+        // Remove a classe do modal e scroll para que fiquem limpos se o usuário voltar
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Fechar ao clicar no overlay escuro de fundo (apenas fecha o modal)
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
-        declineUpsell(e);
+        closeUpsellModal(e);
       }
     });
 
-    // Fechar ao pressionar a tecla Escape
+    // Fechar ao pressionar a tecla Escape (apenas fecha o modal)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-        declineUpsell(e);
+        closeUpsellModal(e);
       }
     });
 
-    // 3. Track analytics ao aceitar a oferta do Pacote Completo (R$14,90)
+    // 3. Track analytics ao aceitar a oferta do Pacote Completo (R$14,90) e redirecionar
     if (mainBtn) {
       mainBtn.addEventListener('click', () => {
         try {
           if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Pacote Completo (Upsell)', value: 14.90, currency: 'BRL' });
           if (window.gtag) gtag('event', 'begin_checkout', { currency: 'BRL', value: 14.90, items: [{ item_name: 'Pacote Completo (Upsell)', price: 14.90, quantity: 1 }] });
           if (window.clarity) clarity('event', 'click_comprar_upsell_completo');
-        } catch (err) {}
+        } catch(err) {}
+        
+        // Remove a classe do modal e scroll
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
       });
     }
   }
