@@ -215,8 +215,12 @@
         const value = which === 'completo' ? 24.90 : 10.00;
         const label = which === 'completo' ? 'Pacote Completo' : 'Pacote Simples';
         try {
-          if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: label, value: value, currency: 'BRL' });
-          if (window.gtag) gtag('event', 'begin_checkout', { currency: 'BRL', value: value, items: [{ item_name: label, price: value, quantity: 1 }] });
+          // Apenas dispara InitiateCheckout direto para o Completo, pois o Simples abre o modal de Upsell primeiro
+          // e o rastreamento final ocorrerá quando o usuário tomar a ação definitiva dentro do modal.
+          if (which === 'completo') {
+            if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: label, value: value, currency: 'BRL' });
+            if (window.gtag) gtag('event', 'begin_checkout', { currency: 'BRL', value: value, items: [{ item_name: label, price: value, quantity: 1 }] });
+          }
           if (window.clarity) clarity('event', 'click_comprar_' + which);
         } catch(e) {}
       });
