@@ -639,6 +639,50 @@
     <div class="footer__copy">© 2026 — Saladas no Pote que Substituem o Almoço · Todos os direitos reservados.</div>
   </footer>
 
+  <!-- Special Offer Upsell Modal -->
+  <div id="upsellModal" class="upsell-modal" role="dialog" aria-modal="true" aria-labelledby="upsellModalTitle">
+    <div class="upsell-modal__card">
+      <button id="upsellCloseBtn" class="upsell-modal__close" type="button" aria-label="Recusar oferta e ir para o Pacote Simples">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="upsell-modal__tag">🎉 Oferta Especial Para Você</div>
+      
+      <h2 id="upsellModalTitle" class="upsell-modal__title">Espera! Antes de continuar...</h2>
+      <p class="upsell-modal__sub">Que tal levar o Kit Completo por muito menos?</p>
+      
+      <div class="upsell-modal__mockup-wrapper">
+        <img class="upsell-modal__mockup" src="assets/mockups/footer-mockup.webp" alt="Todos os 11 Livros do Kit Completo" width="400" height="225" loading="lazy" decoding="async">
+      </div>
+      
+      <div class="upsell-modal__price-block">
+        <span class="upsell-modal__price-old">De R$24,90</span>
+        <span class="upsell-modal__price-new">por apenas <strong>R$14,90</strong></span>
+        <div class="upsell-modal__price-savings">Economia de R$10,00 — só agora</div>
+      </div>
+      
+      <ul class="upsell-modal__checklist">
+        <li>✅ 101 Receitas de Saladas no Pote — 6 Volumes</li>
+        <li>✅ 15 Molhos de Restaurante Feitos em Casa</li>
+        <li>✅ O Sistema dos 5 Potes</li>
+        <li>✅ Guia de Proteínas no Pote</li>
+        <li>✅ Lista de Compras + Guia de Conservação</li>
+      </ul>
+      
+      <div class="upsell-modal__actions">
+        <a href="https://pay.wiapy.com/BWgk84ZpL_" id="upsellMainBtn" class="btn btn--primary btn--full upsell-modal__btn-main">
+          QUERO O PACOTE COMPLETO POR R$14,90 →
+        </a>
+        <a href="https://pay.wiapy.com/c4PsTJwHnw" id="upsellSecBtn" class="upsell-modal__btn-sec">
+          Não obrigado, quero continuar com o Pacote Simples por R$10,00
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Legal modals -->
   <div id="legalModal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
     <div class="legal-modal__panel">

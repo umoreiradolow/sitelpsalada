@@ -1118,3 +1118,258 @@ p { margin: 0; text-wrap: pretty; }
   background-color: var(--neutral-200);
   color: var(--neutral-700);
 }
+
+/* ============================================================
+   UPSELL MODAL (Popup de Oferta Especial)
+   ============================================================ */
+.upsell-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 250; /* Acima do urgency-banner e de outros modais */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.7); /* Fundo overlay 70% opacidade */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms var(--ease-out);
+}
+
+.upsell-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.upsell-modal__card {
+  background: var(--white);
+  border: 3px solid #1B5E20; /* Borda verde escuro */
+  border-radius: var(--r-lg);
+  width: 100%;
+  max-width: 480px; /* Card centralizado */
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  position: relative;
+  padding: clamp(24px, 5vw, 32px) clamp(20px, 4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-4);
+  transform: scale(0.95);
+  transition: transform 320ms var(--ease-out);
+}
+
+.upsell-modal.is-open .upsell-modal__card {
+  transform: scale(1);
+}
+
+/* Botão de Fechar "X" */
+.upsell-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--neutral-100);
+  border: 0;
+  padding: 6px;
+  color: var(--neutral-500);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 8px;
+  transition: all var(--dur);
+}
+
+.upsell-modal__close:hover {
+  background: var(--neutral-200);
+  color: var(--fg-1);
+  transform: scale(1.05);
+}
+
+/* Tag Topo */
+.upsell-modal__tag {
+  display: inline-block;
+  background: var(--gold-100);
+  color: var(--gold-900);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  border: 1px solid var(--gold-300);
+}
+
+/* Título e Subtítulo */
+.upsell-modal__title {
+  font-size: clamp(20px, 5vw, 25px);
+  color: var(--green-900);
+  margin-bottom: 8px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.upsell-modal__sub {
+  font-size: clamp(13px, 3.2vw, 15px);
+  color: var(--fg-2);
+  margin-bottom: 16px;
+  font-weight: 500;
+  max-width: 380px;
+  line-height: 1.4;
+}
+
+/* Imagem Mockup Pequena */
+.upsell-modal__mockup-wrapper {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+}
+
+.upsell-modal__mockup {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(14,56,18,0.15));
+}
+
+/* Bloco de Oferta */
+.upsell-modal__price-block {
+  background: var(--green-50);
+  border: 1px dashed var(--green-300);
+  border-radius: var(--r-md);
+  padding: 12px 20px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.upsell-modal__price-old {
+  font-size: 13.5px;
+  color: var(--neutral-500);
+  text-decoration: line-through;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.upsell-modal__price-new {
+  font-size: 15px;
+  color: var(--fg-1);
+}
+
+.upsell-modal__price-new strong {
+  font-size: clamp(20px, 5vw, 24px);
+  color: #1B5E20; /* Verde escuro bold grande */
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.upsell-modal__price-savings {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--danger);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Lista do que está incluído */
+.upsell-modal__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upsell-modal__checklist li {
+  font-size: clamp(13px, 3.2vw, 14px);
+  line-height: 1.4;
+  color: var(--fg-1);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* Botões de Ação */
+.upsell-modal__actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.upsell-modal__btn-main {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 18px 24px;
+  background-color: #1B5E20; /* Verde escuro */
+  color: var(--white);
+  border-radius: var(--r-pill);
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-3);
+  text-decoration: none;
+  border: 0;
+  line-height: 1;
+  transition: all var(--dur) var(--ease-out);
+}
+
+.upsell-modal__btn-main:hover {
+  background-color: var(--green-900);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-4);
+  color: var(--white);
+}
+
+.upsell-modal__btn-sec {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 16px 24px;
+  background-color: var(--neutral-100);
+  color: var(--neutral-700);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-pill);
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--dur) var(--ease-out);
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+.upsell-modal__btn-sec:hover {
+  background-color: var(--neutral-200);
+  border-color: var(--neutral-300);
+  color: var(--fg-1);
+  transform: translateY(-2px);
+  text-decoration: none;
+  box-shadow: var(--shadow-2);
+}
+
+/* Responsividade para telas de baixa altura (mobile deitado ou telas curtas) */
+@media (max-height: 620px) {
+  .upsell-modal__card {
+    padding: 20px 16px;
+  }
+  .upsell-modal__tag { margin-bottom: 8px; }
+  .upsell-modal__title { margin-bottom: 4px; }
+  .upsell-modal__sub { margin-bottom: 8px; }
+  .upsell-modal__mockup-wrapper { display: none; } /* Oculta mockup em telas muito curtas */
+  .upsell-modal__price-block { margin-bottom: 10px; padding: 8px 16px; }
+  .upsell-modal__checklist { margin-bottom: 14px; }
+  .upsell-modal__actions { gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .upsell-modal__card {
+    width: 90%; /* Em mobile ocupa 90% da tela centralizado */
+    padding: 24px 18px;
+  }
+}

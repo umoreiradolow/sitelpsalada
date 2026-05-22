@@ -284,6 +284,29 @@
     }
   }
 
+  function initVideoScrollPause() {
+    const iframe = document.getElementById('vimeo-player');
+    if (!iframe || !window.IntersectionObserver) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Se o vídeo sumiu completamente da tela (isIntersecting é falso)
+        if (!entry.isIntersecting) {
+          if (vimeoPlayer && typeof vimeoPlayer.pause === 'function') {
+            vimeoPlayer.pause().catch(err => {
+              console.warn("Vimeo scroll pause failed:", err);
+            });
+          }
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0 // Dispara exatamente quando some 100% da tela
+    });
+
+    observer.observe(iframe);
+  }
+
   function loadVimeoAPI() {
     const tag = document.createElement('script');
     tag.src = 'https://player.vimeo.com/api/player.js';
@@ -293,6 +316,7 @@
         if (iframe && typeof Vimeo !== 'undefined') {
           vimeoPlayer = new Vimeo.Player(iframe);
           vimeoPlayer.setLoop(false); // Do not loop, stop after playing once
+          initVideoScrollPause(); // Inicializa a escuta de rolagem
         }
       } catch (e) {
         console.warn("Vimeo Player initialization failed:", e);
@@ -314,6 +338,62 @@
     dateEl.textContent = today.toLocaleDateString('pt-BR', options);
   }
 
+  // ---------- Special Offer Upsell Modal ----------
+  function initUpsellModal() {
+    const modal = document.getElementById('upsellModal');
+    if (!modal) return;
+
+    const simplesBtns = document.querySelectorAll('[data-checkout="simples"]');
+    const closeBtn = document.getElementById('upsellCloseBtn');
+    const secBtn = document.getElementById('upsellSecBtn');
+    const mainBtn = document.getElementById('upsellMainBtn');
+
+    // 1. Interceptar clique no botão do Pacote Simples
+    simplesBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Impede o redirecionamento direto
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden'; // Impede scroll na LP por trás
+      });
+    });
+
+    // 2. Função para recusar a oferta e ir para o checkout do Pacote Simples (R$10,00)
+    function declineUpsell(e) {
+      if (e) e.preventDefault();
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      window.location.href = 'https://pay.wiapy.com/c4PsTJwHnw'; // Redireciona imediatamente para o Simples
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', declineUpsell);
+    if (secBtn) secBtn.addEventListener('click', declineUpsell);
+
+    // Fechar ao clicar no overlay escuro de fundo
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        declineUpsell(e);
+      }
+    });
+
+    // Fechar ao pressionar a tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        declineUpsell(e);
+      }
+    });
+
+    // 3. Track analytics ao aceitar a oferta do Pacote Completo (R$14,90)
+    if (mainBtn) {
+      mainBtn.addEventListener('click', () => {
+        try {
+          if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Pacote Completo (Upsell)', value: 14.90, currency: 'BRL' });
+          if (window.gtag) gtag('event', 'begin_checkout', { currency: 'BRL', value: 14.90, items: [{ item_name: 'Pacote Completo (Upsell)', price: 14.90, quantity: 1 }] });
+          if (window.clarity) clarity('event', 'click_comprar_upsell_completo');
+        } catch (err) {}
+      });
+    }
+  }
+
   // ---------- Boot ----------
   function boot() {
     updateUrgencyDate();
@@ -324,6 +404,7 @@
     initSalePopup();
     initHeroVideo();
     loadVimeoAPI();
+    initUpsellModal();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
