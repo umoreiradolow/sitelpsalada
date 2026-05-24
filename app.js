@@ -8,6 +8,8 @@
 (function() {
   'use strict';
 
+  let isVideoOutOfView = false;
+
   // ---------- Student salads carousel ----------
   const SALADS = [
     { img: 'salad-1.webp', name: 'Daniela S.', caption: 'O molho de gergelim ficou idêntico ao do restaurante. Vício total.' },
@@ -15,7 +17,7 @@
     { img: 'salad-3.webp', name: 'Camila O.',  caption: 'A versão thai com edamame virou a queridinha da casa.' },
     { img: 'salad-4.webp', name: 'Juliana M.', caption: 'Quinta-feira e a folha ainda crocante. Método das camadas funciona.' },
     { img: 'salad-5.webp', name: 'Beatriz A.', caption: 'Salada mexicana com feijão preto — meu marido pediu repetir.' },
-    { img: 'salad-6.webp', name: 'Larissa P.', caption: 'Não consigo mais pedir delivery. Cada pote sai por menos de R$8.' },
+    { img: 'salad-6.webp', name: 'Larissa P.', caption: 'Não consigo mais pedir marmita. Cada pote sai por menos de R$8.' },
   ];
   function renderMarquee() {
     const track = document.getElementById('marquee-track');
@@ -186,6 +188,14 @@
     function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
     function show() {
       if (popClosed) return;
+      
+      // Se o vídeo ainda estiver visível na tela, adia o disparo em 2s
+      if (!isVideoOutOfView) {
+        clearTimeout(popTimer);
+        popTimer = setTimeout(show, 2000);
+        return;
+      }
+      
       const pkg = Math.random() < 0.3 ? 'Pacote Simples' : 'Pacote Completo';
       popName.textContent = pick(SALE_NAMES);
       popAction.innerHTML = `Comprou o <strong>${pkg}</strong>`;
@@ -334,12 +344,31 @@
     }
   }
 
-  function updateUrgencyDate() {
+  function initUrgencyCountdown() {
     const dateEl = document.getElementById('urgencyDate');
     if (!dateEl) return;
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const today = new Date();
-    dateEl.textContent = today.toLocaleDateString('pt-BR', options);
+
+    function updateCountdown() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0); // Next midnight
+
+      const diffMs = midnight - now;
+      if (diffMs <= 0) {
+        dateEl.textContent = "ACABA EM 00:00:00";
+        return;
+      }
+
+      const hours = Math.floor(diffMs / (1000 * 60 * 60));
+      const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+      const pad = num => String(num).padStart(2, '0');
+      dateEl.textContent = `ACABA EM ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   }
 
   // ---------- Special Offer Upsell Modal ----------
@@ -416,9 +445,90 @@
     }
   }
 
+  // ---------- Floating CTA Scroll Listener ----------
+  function initFloatingCta() {
+    const cta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+    const oferta = document.getElementById('oferta');
+    if (!cta || !hero) return;
+    
+    window.addEventListener('scroll', () => {
+      const heroHeight = hero.offsetHeight;
+      const scrollPos = window.scrollY;
+      
+      let shouldShow = scrollPos > heroHeight * 0.5;
+      
+      if (oferta) {
+        const ofertaTop = oferta.offsetTop;
+        // Oculta o botão flutuante quando o topo da seção de ofertas entra no campo de visão da tela
+        if (scrollPos + window.innerHeight > ofertaTop + 100) {
+          shouldShow = false;
+        }
+      }
+      
+      if (shouldShow) {
+        cta.classList.add('is-visible');
+      } else {
+        cta.classList.remove('is-visible');
+      }
+    });
+  }
+
+  // ---------- Staggered Pricing Cards Focus Pulse Observer ----------
+  function initPricingCardsObserver() {
+    const section = document.getElementById('oferta');
+    if (!section || !window.IntersectionObserver) return;
+    
+    const cards = section.querySelectorAll('.price-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Dispara animação stagger de pulso premium nas tabelas de preço
+          cards.forEach((card, idx) => {
+            setTimeout(() => {
+              card.classList.add('animate-pulse-once');
+            }, idx * 150);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15
+    });
+    
+    observer.observe(section);
+  }
+
+  // ---------- Video Visibility Observer (For Popups) ----------
+  function initVideoVisibilityObserver() {
+    const iframe = document.getElementById('vimeo-player');
+    if (!iframe || !window.IntersectionObserver) {
+      isVideoOutOfView = true;
+      return;
+    }
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVideoOutOfView = !entry.isIntersecting;
+        // Se o vídeo voltou a ficar visível, esconde o popup social imediatamente
+        if (entry.isIntersecting) {
+          const pop = document.getElementById('salePop');
+          if (pop) pop.classList.remove('is-visible');
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0
+    });
+    
+    observer.observe(iframe);
+  }
+
   // ---------- Boot ----------
   function boot() {
-    updateUrgencyDate();
+    initUrgencyCountdown();
     renderMarquee();
     initFAQ();
     initLegal();
@@ -427,6 +537,9 @@
     initHeroVideo();
     loadVimeoAPI();
     initUpsellModal();
+    initFloatingCta();
+    initPricingCardsObserver();
+    initVideoVisibilityObserver();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
