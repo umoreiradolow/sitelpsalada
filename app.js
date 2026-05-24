@@ -448,23 +448,16 @@
   // ---------- Floating CTA Scroll Listener ----------
   function initFloatingCta() {
     const cta = document.getElementById('floatingCta');
-    const hero = document.querySelector('.hero');
     const oferta = document.getElementById('oferta');
-    if (!cta || !hero) return;
+    if (!cta || !oferta) return;
     
     window.addEventListener('scroll', () => {
-      const heroHeight = hero.offsetHeight;
       const scrollPos = window.scrollY;
+      const ofertaBottom = oferta.offsetTop + oferta.offsetHeight;
       
-      let shouldShow = scrollPos > heroHeight * 0.5;
-      
-      if (oferta) {
-        const ofertaTop = oferta.offsetTop;
-        // Oculta o botão flutuante quando o topo da seção de ofertas entra no campo de visão da tela
-        if (scrollPos + window.innerHeight > ofertaTop + 100) {
-          shouldShow = false;
-        }
-      }
+      // O botão flutuante só deve aparecer se a pessoa passar das ofertas e continuar descendo para ver o resto do conteúdo.
+      // Oculta o botão flutuante caso a pessoa suba e a tabela de preços volte para a tela.
+      const shouldShow = scrollPos > (ofertaBottom - 120);
       
       if (shouldShow) {
         cta.classList.add('is-visible');
@@ -526,6 +519,78 @@
     observer.observe(iframe);
   }
 
+  // ---------- Unified Carousel Title Transition Observer ----------
+  function initUnifiedCarouselTransition() {
+    const container = document.getElementById('unified-container');
+    const bonusStart = document.getElementById('bonus-start-card');
+    const bonusEnd = document.getElementById('bonus-end-card');
+    const bonusStartDup = document.getElementById('bonus-start-card-dup');
+    const bonusEndDup = document.getElementById('bonus-end-card-dup');
+    const titleVolumes = document.getElementById('title-volumes');
+    const titleBonuses = document.getElementById('title-bonuses');
+    const section = document.getElementById('volumes-e-bonus');
+
+    if (!container || !bonusStart || !bonusEnd || !bonusStartDup || !bonusEndDup || !titleVolumes || !titleBonuses || !section) return;
+
+    let isVisible = false;
+    let rafId = null;
+
+    function checkPosition() {
+      if (!isVisible) return;
+
+      const containerRect = container.getBoundingClientRect();
+      const containerCenter = containerRect.left + containerRect.width / 2;
+
+      // Check original set
+      const b1Rect = bonusStart.getBoundingClientRect();
+      const b4Rect = bonusEnd.getBoundingClientRect();
+      
+      // Check duplicated set
+      const b1DupRect = bonusStartDup.getBoundingClientRect();
+      const b4DupRect = bonusEndDup.getBoundingClientRect();
+
+      // Custom thresholds for desktop / mobile to provide smooth cross-fade timing
+      const threshold = window.innerWidth > 720 ? 120 : 60;
+
+      const isBonusSet1Active = (b1Rect.left < containerCenter + threshold) && (b4Rect.right > containerCenter - threshold);
+      const isBonusSet2Active = (b1DupRect.left < containerCenter + threshold) && (b4DupRect.right > containerCenter - threshold);
+
+      const isBonusActive = isBonusSet1Active || isBonusSet2Active;
+
+      if (isBonusActive) {
+        if (!titleBonuses.classList.contains('is-active')) {
+          titleVolumes.classList.remove('is-active');
+          titleBonuses.classList.add('is-active');
+        }
+      } else {
+        if (!titleVolumes.classList.contains('is-active')) {
+          titleVolumes.classList.add('is-active');
+          titleBonuses.classList.remove('is-active');
+        }
+      }
+
+      rafId = requestAnimationFrame(checkPosition);
+    }
+
+    // Performance-optimized visibility-based animation observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(checkPosition);
+        } else {
+          cancelAnimationFrame(rafId);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0
+    });
+
+    observer.observe(section);
+  }
+
   // ---------- Boot ----------
   function boot() {
     initUrgencyCountdown();
@@ -540,6 +605,7 @@
     initFloatingCta();
     initPricingCardsObserver();
     initVideoVisibilityObserver();
+    initUnifiedCarouselTransition();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

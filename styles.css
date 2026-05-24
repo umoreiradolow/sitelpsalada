@@ -412,8 +412,31 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 /* ============================================================
-   VOLUMES
+   VOLUMES & BONUSES UNIFIED CAROUSEL
    ============================================================ */
+/* Transitional Carousel Title Blocks using CSS Grid Overlapping */
+.unified-carousel-header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  position: relative;
+  margin-bottom: 24px;
+}
+.carousel-title-block {
+  grid-area: 1 / 1 / 2 / 2;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(0.97) translateY(12px);
+  pointer-events: none;
+  margin-bottom: 0 !important; /* Reset margin bottom since parent controls spacing */
+}
+.carousel-title-block.is-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
 /* ============================================================
    CAROUSEL SYSTEMS
    ============================================================ */
@@ -435,54 +458,44 @@ p { margin: 0; text-wrap: pretty; }
   display: none !important; /* Obsolete manual buttons hidden */
 }
 
-.volumes-grid {
+.unified-grid {
   display: flex;
   gap: 16px;
   width: max-content;
   padding: 12px 0 24px;
-  animation: volumes-marquee 45s linear infinite;
+  animation: unified-marquee 40s linear infinite;
   will-change: transform;
 }
 
-.bonuses-grid {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  padding: 12px 0 24px;
-  animation: bonuses-marquee 30s linear infinite;
-  will-change: transform;
-}
+/* Hover pause disabled by user request */
 
-.carousel-container:hover .volumes-grid,
-.carousel-container:hover .bonuses-grid {
-  animation-play-state: paused;
-}
-
-@keyframes volumes-marquee {
+@keyframes unified-marquee {
   0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
-
-@keyframes bonuses-marquee {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(-2060px, 0, 0); }
 }
 
 /* ============================================================
    VOLUMES
    ============================================================ */
 .volume-card {
-  flex: 0 0 210px; /* Fixed card width on desktop */
+  flex: 0 0 190px; /* Reduced by 10% from 210px */
   scroll-snap-align: start;
-  background: #fff; border-radius: var(--r-md);
-  border: 1px solid var(--line-1); overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, var(--green-50) 100%);
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--green-200); overflow: hidden;
   box-shadow: var(--shadow-1);
   display: flex; flex-direction: column;
   transition: all var(--dur) var(--ease-out);
   text-decoration: none; color: inherit;
 }
-.volume-card:hover { box-shadow: var(--shadow-2); }
-.volume-card__cover { aspect-ratio: 5/7; background: var(--cream); border-bottom: 1px solid var(--line-1); }
+.volume-card:hover { border-color: var(--green-400); box-shadow: 0 6px 16px rgba(46, 125, 50, 0.08); transform: translateY(-2px); }
+.volume-card__cover {
+  aspect-ratio: 5/7;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line-1);
+  width: 100%;
+  flex-shrink: 0;
+}
 .volume-card__cover img { width: 100%; height: 100%; object-fit: cover; }
 .volume-card__body {
   padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1;
@@ -511,27 +524,34 @@ p { margin: 0; text-wrap: pretty; }
    BONUSES
    ============================================================ */
 .bonus-card {
-  flex: 0 0 190px; /* Fixed card width on desktop */
+  flex: 0 0 190px; /* Same size as volume-card */
   scroll-snap-align: start;
-  background: #fff; border-radius: var(--r-md);
-  border: 1.5px solid var(--gold-300); overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, var(--green-50) 100%);
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--green-200); overflow: hidden;
   box-shadow: var(--shadow-1);
   display: flex; flex-direction: column; position: relative;
   transition: all var(--dur) var(--ease-out);
   text-decoration: none; color: inherit;
 }
-.bonus-card:hover { box-shadow: var(--shadow-gold); }
+.bonus-card:hover { border-color: var(--green-400); box-shadow: 0 6px 16px rgba(46, 125, 50, 0.08); transform: translateY(-2px); }
 .bonus-card__badge {
   position: absolute; top: 10px; right: 10px; z-index: 2;
-  background: var(--gold-500); color: var(--green-900);
+  background: var(--green-700); color: #fff;
   font-size: 9px; font-weight: 800; letter-spacing: 0.12em;
   padding: 4px 8px; border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(14,56,18,0.18);
+  box-shadow: 0 2px 6px rgba(20, 71, 26, 0.12);
 }
-.bonus-card__cover { aspect-ratio: 5/7; background: var(--gold-100); }
+.bonus-card__cover {
+  aspect-ratio: 5/7;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line-1);
+  width: 100%;
+  flex-shrink: 0;
+}
 .bonus-card__cover img { width: 100%; height: 100%; object-fit: cover; }
-.bonus-card__body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.bonus-card h3 { font-size: 14px; font-weight: 700; line-height: 1.25; min-height: 38px; }
+.bonus-card__body { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.bonus-card h3 { font-size: 15px; font-weight: 700; line-height: 1.25; min-height: 38px; }
 .bonus-card__price { display: flex; align-items: baseline; gap: 8px; margin-top: auto; }
 .bonus-card__strike { color: var(--danger); text-decoration: line-through; font-size: 12px; font-weight: 600; }
 .bonus-card__free {
@@ -625,7 +645,7 @@ p { margin: 0; text-wrap: pretty; }
   animation: marquee-scroll 60s linear infinite;
   will-change: transform;
 }
-.marquee__wrap:hover .marquee__track { animation-play-state: paused; }
+/* Hover pause disabled by user request */
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -656,7 +676,7 @@ p { margin: 0; text-wrap: pretty; }
    ============================================================ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 32px; align-items: stretch;
   justify-items: center;
   margin-top: 16px;
@@ -669,7 +689,7 @@ p { margin: 0; text-wrap: pretty; }
 .price-card--simple {
   border: 1px solid var(--line-1);
   padding: 32px; max-width: 380px;
-  justify-self: end; align-self: center;
+  justify-self: start; align-self: center;
   gap: 18px;
 }
 .price-card--pro {
@@ -1124,36 +1144,37 @@ p { margin: 0; text-wrap: pretty; }
   /* === MOBILE CAROUSEL: automatic infinite marquees === */
   .carousel-btn { display: none; }
   .carousel-container { padding: 0; }
-  .volumes-grid {
+  .unified-grid {
     gap: 12px;
-    animation-duration: 36s;
-  }
-  .bonuses-grid {
-    gap: 12px;
-    animation-duration: 23s;
+    animation: unified-marquee-mobile 32s linear infinite;
   }
   .volume-card {
-    flex: 0 0 170px;
+    flex: 0 0 153px; /* Reduced by 10% from 170px */
   }
   .volume-card__body { padding: 12px; gap: 4px; }
   .volume-card__tag { font-size: 10px; }
-  .volume-card h3 { font-size: 14px; }
-  .volume-card__desc { font-size: 12px; line-height: 1.35; }
+  .volume-card h3 { font-size: 13.5px; }
+  .volume-card__desc { font-size: 11.5px; line-height: 1.3; }
   .volume-card__count { font-size: 10px; padding: 3px 8px; }
   .volume-card__count .dot { width: 5px; height: 5px; }
 
   .bonus-card {
-    flex: 0 0 160px;
+    flex: 0 0 153px; /* Same size as volume-card */
   }
   .bonus-card__badge {
     top: 8px; right: 8px;
-    font-size: 9px; padding: 4px 8px; letter-spacing: 0.12em;
+    font-size: 8.5px; padding: 3px 7px; letter-spacing: 0.12em;
   }
-  .bonus-card__body { padding: 12px; gap: 6px; }
-  .bonus-card h3 { font-size: 12.5px; line-height: 1.25; min-height: 0; }
-  .bonus-card__price { gap: 6px; flex-wrap: wrap; }
-  .bonus-card__strike { font-size: 11px; }
-  .bonus-card__free { font-size: 10px; padding: 2px 8px; letter-spacing: 0.10em; }
+  .bonus-card__body { padding: 12px; gap: 4px; }
+  .bonus-card h3 { font-size: 13.5px; line-height: 1.2; min-height: 0; }
+  .bonus-card__price { gap: 4px; flex-wrap: wrap; }
+  .bonus-card__strike { font-size: 10px; }
+  .bonus-card__free { font-size: 9.5px; padding: 2px 6px; letter-spacing: 0.08em; }
+
+  @keyframes unified-marquee-mobile {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-1650px, 0, 0); }
+  }
 
   /* Section headers tighter on mobile too */
   .section { padding: 48px 0; }
