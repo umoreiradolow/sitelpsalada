@@ -322,6 +322,8 @@
   }
 
   function loadVimeoAPI() {
+    const iframe = document.getElementById('vimeo-player');
+    if (!iframe) return;
     const tag = document.createElement('script');
     tag.src = 'https://player.vimeo.com/api/player.js';
     tag.onload = function() {

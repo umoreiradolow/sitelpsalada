@@ -63,7 +63,7 @@
   <!-- ============================================================ HERO ============================================================ -->
   <section class="hero" data-screen-label="01 Hero">
     <div class="container hero__grid">
-      <div>
+      <div class="hero__content-column">
         <div class="hero__badge">
           <span>🥗 101 Receitas</span>
           <span class="sep">·</span>
@@ -82,34 +82,69 @@
           A partir de R$10,00 — Acesso imediato<br>Garantia de 7 dias
         </div>
 
-        <div class="hero__cta-wrapper">
-          <a href="#oferta" class="btn btn--primary btn--xl">QUERO MEU KIT AGORA</a>
-          <div class="hero__social-proof">
-            <div class="hero__stars-sold">
-              <span class="stars">⭐⭐⭐⭐⭐</span>
-              <span class="hero__sold-text"><strong>+2.847</strong> kits vendidos essa semana</span>
-            </div>
+        <div class="hero__social-proof" style="margin-top: 24px; align-items: flex-start; justify-content: center;">
+          <div class="hero__stars-sold">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="hero__sold-text"><strong>+2.847</strong> kits vendidos essa semana</span>
           </div>
         </div>
       </div>
-      <div class="hero__video-wrap">
-        <div class="hero__video-container">
-          <iframe id="vimeo-player" 
-                  title="vimeo-player" 
-                  src="https://player.vimeo.com/video/1194529677?h=6f43bce623&autoplay=1&muted=1&loop=0&autopause=0&controls=0&playsinline=1&api=1" 
-                  width="640" 
-                  height="360" 
-                  frameborder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" 
-                  allowfullscreen>
-          </iframe>
-          <div class="video-click-catcher" id="videoClickCatcher" style="position: absolute; inset: 0; z-index: 5; cursor: pointer; display: none;"></div>
-          <div class="video-overlay" id="videoOverlay">
-            <button class="video-overlay__btn" type="button">
-              ▶ Ela prepara o almoço de <br> 5 dias em menos de 30 min
-            </button>
-          </div>
+      <div class="hero__pricing-column">
+        <div class="pricing-security-badge" style="margin-bottom: 16px;">
+          <span>🔒 Compra 100% Segura</span>
+          <span class="sep">·</span>
+          <span>⚡ Acesso Imediato</span>
+          <span class="sep">·</span>
+          <span>↺ 7 Dias de Garantia</span>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card price-card--simple">
+            <div>
+              <div class="price-card__eyebrow">Pacote</div>
+              <h3>Simples</h3>
+            </div>
+            <ul class="price-card__feats">
+              <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
+              <li><span class="check">✓</span><span>Acesso imediato</span></li>
+              <li class="feat--dim"><span class="check check--x">×</span><span>Sem os bônus exclusivos</span></li>
+            </ul>
+            <div class="price-card__price-block">
+              <div class="price-card__from-strike">De R$49,90 por apenas</div>
+              <div class="price-card__big">R$10<span class="price-card__big-cents">,00</span></div>
+              <div class="price-card__sub">pagamento único</div>
+            </div>
+            <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" class="btn btn--secondary btn--full" data-checkout="simples" aria-label="Começar com o básico — Pacote Simples por R$10,00">COMEÇAR COM O BÁSICO</a>
+          </article>
+
+          <article class="price-card price-card--pro">
+            <div class="price-card__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+              MAIS ESCOLHIDO
+            </div>
+            <div>
+              <div class="price-card__eyebrow">Pacote</div>
+              <h3>Completo</h3>
+            </div>
+            <ul class="price-card__feats">
+              <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
+              <li><span class="check">✓</span><span>Atualizações semanais</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ 15 Molhos de Restaurante</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ Sistema dos 5 Potes</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ Guia de Proteínas no Pote</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ Lista de Compras + Conservação</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ Guia de Temperos</span></li>
+              <li><span class="gift-icon">🎁</span><span>+ Receitas para Dietas Específicas</span></li>
+            </ul>
+            <div class="price-card__price-block">
+              <div class="price-card__from-strike">Valor total: R$150,80</div>
+              <div class="price-card__pro-price-row">
+                <span class="price-card__pro-price-prefix">por apenas</span>
+                <span class="price-card__big">R$24<span class="price-card__big-cents">,90</span></span>
+              </div>
+              <div class="price-card__sub">pagamento único · acesso vitalício</div>
+            </div>
+            <a href="https://ggcheckout.app/checkout/v5/mCjx0h3Zfx9CKfe7vAgf" class="btn btn--primary btn--xl btn--full" data-checkout="completo" aria-label="Quero o pacote completo — Pacote Completo por R$24,90">QUERO O PACOTE COMPLETO</a>
+          </article>
         </div>
       </div>
     </div>
@@ -347,10 +382,7 @@
         <span>Valor total dos bônus: <span class="bonuses-total__strike">R$100,90</span> <strong class="bonuses-total__highlight">incluídos gratuitamente no Pacote Completo.</strong></span>
       </div>
 
-      <div class="bonuses-cta">
-        <a href="#oferta" class="btn btn--primary bonuses-cta__btn">VER PACOTES E GARANTIR MEU KIT</a>
-        <p class="bonuses-cta__sub">Pacote Completo a partir de R$24,90 · 7 dias de garantia</p>
-      </div>
+
     </div>
   </section>
 
@@ -503,72 +535,6 @@
             <img class="testimonial__avatar" src="assets/avatars/silvana.webp" alt="Silvana C." width="52" height="52" loading="lazy" decoding="async">
             <div><div class="testimonial__name">Silvana C.</div><div class="testimonial__age">49 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ PRICING ============================================================ -->
-  <section id="oferta" class="section section--tint" data-screen-label="06 Oferta">
-    <div class="container">
-      <header class="section-head">
-        <div class="pricing-security-badge">
-          <span>🔒 Compra 100% Segura</span>
-          <span class="sep">·</span>
-          <span>⚡ Acesso Imediato</span>
-          <span class="sep">·</span>
-          <span>↺ 7 Dias de Garantia</span>
-        </div>
-        <div class="eyebrow" style="margin-top: 16px;">Escolha seu pacote</div>
-        <h2>Comece Hoje por Menos do que um Almoço</h2>
-      </header>
-      <div class="pricing-grid">
-        <article class="price-card price-card--simple">
-          <div>
-            <div class="price-card__eyebrow">Pacote</div>
-            <h3>Simples</h3>
-          </div>
-          <ul class="price-card__feats">
-            <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
-            <li><span class="check">✓</span><span>Acesso imediato</span></li>
-            <li class="feat--dim"><span class="check check--x">×</span><span>Sem os bônus exclusivos</span></li>
-          </ul>
-          <div class="price-card__price-block">
-            <div class="price-card__from-strike">De R$49,90 por apenas</div>
-            <div class="price-card__big">R$10<span class="price-card__big-cents">,00</span></div>
-            <div class="price-card__sub">pagamento único</div>
-          </div>
-          <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" class="btn btn--secondary btn--full" data-checkout="simples" aria-label="Começar com o básico — Pacote Simples por R$10,00">COMEÇAR COM O BÁSICO</a>
-        </article>
-
-        <article class="price-card price-card--pro">
-          <div class="price-card__badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
-            MAIS ESCOLHIDO
-          </div>
-          <div>
-            <div class="price-card__eyebrow">Pacote</div>
-            <h3>Completo</h3>
-          </div>
-          <ul class="price-card__feats">
-            <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
-            <li><span class="check">✓</span><span>Atualizações semanais</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ 15 Molhos de Restaurante</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ Sistema dos 5 Potes</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ Guia de Proteínas no Pote</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ Lista de Compras + Conservação</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ Guia de Temperos</span></li>
-            <li><span class="gift-icon">🎁</span><span>+ Receitas para Dietas Específicas</span></li>
-          </ul>
-          <div class="price-card__price-block">
-            <div class="price-card__from-strike">Valor total: R$150,80</div>
-            <div class="price-card__pro-price-row">
-              <span class="price-card__pro-price-prefix">por apenas</span>
-              <span class="price-card__big">R$24<span class="price-card__big-cents">,90</span></span>
-            </div>
-            <div class="price-card__sub">pagamento único · acesso vitalício</div>
-          </div>
-          <a href="https://ggcheckout.app/checkout/v5/mCjx0h3Zfx9CKfe7vAgf" class="btn btn--primary btn--xl btn--full" data-checkout="completo" aria-label="Quero o pacote completo — Pacote Completo por R$24,90">QUERO O PACOTE COMPLETO</a>
         </article>
       </div>
     </div>
@@ -779,11 +745,6 @@
 
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585314683156291&ev=PageView&noscript=1"/></noscript>
 
-  <!-- Floating Sticky Mobile CTA Button -->
-  <div class="floating-cta" id="floatingCta">
-    <a href="#oferta" class="btn btn--primary btn--xl btn--full">QUERO MEU KIT AGORA
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
-  </div>
+
 </body>
 </html>
