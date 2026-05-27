@@ -453,10 +453,7 @@ p { margin: 0; text-wrap: pretty; }
   will-change: transform;
 }
 
-.carousel-container:hover .volumes-grid,
-.carousel-container:hover .bonuses-grid {
-  animation-play-state: paused;
-}
+
 
 @keyframes volumes-marquee {
   0% { transform: translate3d(0, 0, 0); }
@@ -625,7 +622,7 @@ p { margin: 0; text-wrap: pretty; }
   animation: marquee-scroll 60s linear infinite;
   will-change: transform;
 }
-.marquee__wrap:hover .marquee__track { animation-play-state: paused; }
+
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -656,7 +653,7 @@ p { margin: 0; text-wrap: pretty; }
    ============================================================ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 32px; align-items: stretch;
   justify-items: center;
   margin-top: 16px;
@@ -669,13 +666,14 @@ p { margin: 0; text-wrap: pretty; }
 .price-card--simple {
   border: 1px solid var(--line-1);
   padding: 32px; max-width: 380px;
-  justify-self: end; align-self: center;
+  justify-self: start; align-self: center;
   gap: 18px;
 }
 .price-card--pro {
   border: 2.5px solid var(--green-700);
   padding: 36px; max-width: 460px;
   box-shadow: var(--shadow-4);
+  justify-self: end;
   gap: 22px;
 }
 .price-card__badge {
@@ -710,6 +708,11 @@ p { margin: 0; text-wrap: pretty; }
   font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 2px;
 }
 .price-card__feats .check--x { background: var(--neutral-300); }
+.price-card__feats .gift-icon {
+  width: 18px; height: 18px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0; margin-top: 2px;
+}
 .price-card__feats li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.4; }
 .price-card__feats .feat--dim { color: var(--neutral-500); text-decoration: line-through; }
 .price-card--pro .price-card__feats li { font-weight: 600; }

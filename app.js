@@ -75,7 +75,7 @@
         <h4>5. Compartilhamento com terceiros</h4>
         <p>Compartilhamos apenas o estritamente necessário com:</p>
         <ul>
-          <li>Plataformas de pagamento e processamento de pedidos (ex.: Wiapy).</li>
+          <li>Plataformas de pagamento e processamento de pedidos (ex.: GG Checkout).</li>
           <li>Ferramentas de análise e publicidade (Meta, Google, Microsoft).</li>
           <li>Autoridades quando exigido por lei.</li>
         </ul>
@@ -107,7 +107,7 @@
         <h4>2. Acesso e entrega</h4>
         <p>O link de acesso é enviado para o e-mail informado no checkout, em geral em poucos minutos. Em caso de atraso ou não recebimento, entre em contato pelo e-mail de suporte.</p>
         <h4>3. Preços e formas de pagamento</h4>
-        <p>Os preços exibidos estão em reais (R$) e podem ser alterados a qualquer momento sem aviso prévio. O pagamento é processado por gateway parceiro (Wiapy), que aceita cartão de crédito, Pix e demais métodos disponíveis no checkout.</p>
+        <p>Os preços exibidos estão em reais (R$) e podem ser alterados a qualquer momento sem aviso prévio. O pagamento é processado por gateway parceiro (GG Checkout), que aceita cartão de crédito, Pix e demais métodos disponíveis no checkout.</p>
         <h4>4. Garantia e reembolso</h4>
         <p>Oferecemos <strong>garantia incondicional de 7 dias</strong> a partir da data da compra, conforme o Código de Defesa do Consumidor (art. 49). Para solicitar reembolso, envie um e-mail para <strong>moreira.digital2026@gmail.com</strong> dentro do prazo, sem necessidade de justificativa. O valor é estornado integralmente.</p>
         <h4>5. Uso permitido</h4>
