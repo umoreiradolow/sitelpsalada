@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1B5E20">
+  <meta name="theme-color" content="#0F4C1F">
 
   <!-- Utmify Tracker -->
   <script
@@ -30,7 +30,7 @@
   <!-- End Meta Pixel Code -->
 
   <title>101 Receitas de Saladas no Pote que Substituem o Almoço</title>
-  <meta name="description" content="Saladas completas, com proteína, que conservam até 7 dias e fazem até quem odeia salada pedir mais — prontas em 30 minutos.">
+  <meta name="description" content="Saladas completas, com proteína, que conservam até 7 dias frescas e crocantes. Economize tempo e dinheiro com refeições saudáveis prontas em 1 hora para toda a semana.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -39,801 +39,702 @@
   <meta property="og:image" content="assets/mockups/hero-mockup.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Preload hero LCP image -->
+  <!-- Preload LCP elements -->
   <link rel="preload" as="image" href="assets/mockups/hero-mockup.webp" fetchpriority="high">
 
-  <!-- Fonts: async (non-blocking) -->
+  <!-- Fonts Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/logo/logo-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Urgency Banner -->
+  <!-- Urgency Countdown Banner -->
   <div class="urgency-banner" id="urgencyBanner">
-    <span class="urgency-banner__text">🚨 OFERTA EXCLUSIVA: APENAS HOJE, <span id="urgencyDate"></span>! 🚨</span>
+    <span class="urgency-banner__text">⚡ OFERTA EXCLUSIVA DE HOJE: <span class="urgency-banner__timer" id="urgencyCountdown">00:00:00</span></span>
   </div>
 
   <main>
-  <!-- ============================================================ HERO ============================================================ -->
-  <section class="hero" data-screen-label="01 Hero">
-    <div class="container hero__grid">
-      <div class="hero__content-column">
-        <div class="hero__badge">
-          <span>🥗 101 Receitas</span>
-          <span class="sep">·</span>
-          <span>🎁 4 Brindes</span>
-          <span class="sep">·</span>
-          <span>📚 6 Volumes</span>
-          <span class="sep">·</span>
-          <span>📅 7 Dias Frescas</span>
-          <span class="sep">·</span>
-          <span>⏱️ 30 Min de Preparo</span>
-        </div>
-        <h1>101 Receitas de Saladas no Pote que <span class="hl">Substituem o Almoço</span></h1>
-        <p class="hero__sub">Chega de pedir marmita às 11h porque não planejou nada. São 101 receitas com proteína de verdade, prontas em 30 min, frescas por 7 dias.</p>
-        
-        <div class="hero__price-box">
-          A partir de R$10,00 — Acesso imediato<br>Garantia de 7 dias
-        </div>
-
-        <div class="hero__social-proof">
-          <div class="hero__stars-sold">
-            <span class="stars">⭐⭐⭐⭐⭐</span>
-            <span class="hero__sold-text"><strong>+2.847</strong> kits vendidos essa semana</span>
+    <!-- ============================================================ HERO ============================================================ -->
+    <section class="hero" data-screen-label="01 Hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="badge-item">🥗 101 Receitas</span>
+            <span class="badge-sep">·</span>
+            <span class="badge-item">📅 Frescas por 7 Dias</span>
+            <span class="badge-sep">·</span>
+            <span class="badge-item">⏱️ Prep em 1h</span>
+          </div>
+          <h1>Almoço Pronto na <br>Geladeira para a <br><span class="hl">Semana Inteira</span> <br><span class="hl">em 1 Hora</span></h1>
+          <p class="hero__sub">Fresco, saudável e crocante de segunda a sexta. Diga adeus às marmitas caras de R$35,00 e coma comida de verdade que ajuda a emagrecer.</p>
+          
+          <div class="hero__actions-box">
+            <a href="#ofertas-anchor" class="btn btn--primary btn--xl hero__cta-btn">
+              QUERO MEU KIT AGORA
+              <span class="btn__sub">Por apenas R$ 10,00 · Liberação Imediata</span>
+            </a>
+            <div class="hero__social-proof">
+              <span class="stars">★★★★★</span>
+              <span class="sold-text"><strong>+2.847</strong> kits vendidos essa semana</span>
+            </div>
           </div>
         </div>
 
-        <!-- Mini infinite marquee of all covers inside Hero -->
-        <div class="hero-carousel-container">
-          <div class="hero-carousel-track">
-            <!-- 6 Volumes -->
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-1-fundamentos.webp" alt="Volume 1" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 1</span>
-              <h4>Fundamentos</h4>
+        <div class="hero__video-wrapper">
+          <div class="video-container">
+            <iframe id="vimeo-player" 
+                    title="vimeo-player" 
+                    src="https://player.vimeo.com/video/1194529677?h=6f43bce623&autoplay=1&muted=1&loop=0&autopause=0&controls=0&playsinline=1&api=1" 
+                    width="240" 
+                    height="426" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+            <div class="video-click-catcher" id="videoClickCatcher"></div>
+            <div class="video-overlay" id="videoOverlay">
+              <button class="video-overlay__btn" type="button">
+                <span class="play-icon">▶</span>
+                <span class="play-text">Veja como ela monta 5 almoços práticos em 30 min</span>
+              </button>
             </div>
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-2-saladas-completas.webp" alt="Volume 2" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 2</span>
-              <h4>Saladas Completas</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-3-sabores-do-mundo.webp" alt="Volume 3" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 3</span>
-              <h4>Sabores do Mundo</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-4-alto-teor-proteico.webp" alt="Volume 4" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 4</span>
-              <h4>Alto Proteico</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-5-vegano.webp" alt="Volume 5" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 5</span>
-              <h4>100% Vegano</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/covers/vol-6-gourmet.webp" alt="Volume 6" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 6</span>
-              <h4>Edição Gourmet</h4>
-            </div>
-            <!-- 4 Bonuses -->
-            <div class="hero-carousel-card">
-              <img src="assets/bonuses/bonus-1-15-molhos.webp" alt="Bônus 1" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 1</span>
-              <h4>15 Molhos</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/bonuses/bonus-2-sistema-5-potes.webp" alt="Bônus 2" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 2</span>
-              <h4>5 Potes</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/bonuses/bonus-3-guia-proteina.webp" alt="Bônus 3" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 3</span>
-              <h4>Proteínas</h4>
-            </div>
-            <div class="hero-carousel-card">
-              <img src="assets/bonuses/bonus-4-lista-compras.webp" alt="Bônus 4" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 4</span>
-              <h4>Lista + Conservação</h4>
-            </div>
+          </div>
+          <p class="video-caption">💡 Toque no vídeo para assistir com áudio</p>
+        </div>
+      </div>
+    </section>
 
-            <!-- Loop duplication (10 cards duplicated) -->
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-1-fundamentos.webp" alt="Volume 1" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 1</span>
-              <h4>Fundamentos</h4>
+    <!-- ============================================================ POTE INTERATIVO ============================================================ -->
+    <section class="section section--light section--pote" data-screen-label="02 Segredo das Camadas">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Por que funciona?</span>
+          <h2>O Segredo da Salada que Não Murcha</h2>
+          <p class="lead">Folhas moles e com gosto de passadas? Nunca mais. Com a engenharia das 5 camadas, cada ingrediente fica isolado no lugar perfeito.</p>
+        </header>
+
+        <div class="pote-grid">
+          <!-- Glass Jar CSS Container -->
+          <div class="pote-visualizer">
+            <div class="glass-jar">
+              <div class="jar-lid"></div>
+              <div class="jar-neck"></div>
+              <div class="jar-body">
+                <!-- Layer 5 (Top) -->
+                <div class="jar-layer jar-layer--5" data-layer="5">
+                  <span class="layer-number">5</span>
+                  <span class="layer-title">Folhas Crocantes</span>
+                </div>
+                <!-- Layer 4 -->
+                <div class="jar-layer jar-layer--4" data-layer="4">
+                  <span class="layer-number">4</span>
+                  <span class="layer-title">Vegetais Delicados</span>
+                </div>
+                <!-- Layer 3 -->
+                <div class="jar-layer jar-layer--3" data-layer="3">
+                  <span class="layer-number">3</span>
+                  <span class="layer-title">Massas e Grãos</span>
+                </div>
+                <!-- Layer 2 -->
+                <div class="jar-layer jar-layer--2" data-layer="2">
+                  <span class="layer-number">2</span>
+                  <span class="layer-title">Proteínas e Selagem</span>
+                </div>
+                <!-- Layer 1 (Bottom) -->
+                <div class="jar-layer jar-layer--1" data-layer="1">
+                  <span class="layer-number">1</span>
+                  <span class="layer-title">O Molho</span>
+                </div>
+              </div>
             </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-2-saladas-completas.webp" alt="Volume 2" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 2</span>
-              <h4>Saladas Completas</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-3-sabores-do-mundo.webp" alt="Volume 3" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 3</span>
-              <h4>Sabores do Mundo</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-4-alto-teor-proteico.webp" alt="Volume 4" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 4</span>
-              <h4>Alto Proteico</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-5-vegano.webp" alt="Volume 5" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 5</span>
-              <h4>100% Vegano</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/covers/vol-6-gourmet.webp" alt="Volume 6" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag">Volume 6</span>
-              <h4>Edição Gourmet</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/bonuses/bonus-1-15-molhos.webp" alt="Bônus 1" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 1</span>
-              <h4>15 Molhos</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/bonuses/bonus-2-sistema-5-potes.webp" alt="Bônus 2" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 2</span>
-              <h4>5 Potes</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/bonuses/bonus-3-guia-proteina.webp" alt="Bônus 3" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 3</span>
-              <h4>Proteínas</h4>
-            </div>
-            <div class="hero-carousel-card" aria-hidden="true">
-              <img src="assets/bonuses/bonus-4-lista-compras.webp" alt="Bônus 4" width="220" height="308" loading="lazy" decoding="async">
-              <span class="card-tag card-tag--bonus">Bônus 4</span>
-              <h4>Lista + Conservação</h4>
+          </div>
+
+          <!-- Explanation details -->
+          <div class="pote-details">
+            <div class="details-nav-title">💡 Toque nas camadas para ver o segredo:</div>
+            
+            <div class="layer-detail-box" id="layer-detail-box">
+              <div class="layer-detail-content active" data-layer-content="5">
+                <span class="detail-badge">Camada 5 - O Topo</span>
+                <h3>Folhas Verdes e Crocantes</h3>
+                <p>Alface, rúcula, agrião e espinafre. Ficam no topo, o mais longe possível do molho. O ar da parte superior mantém as folhas totalmente secas, frescas e crocantes por até 7 dias, como se tivessem sido colhidas na hora.</p>
+              </div>
+              <div class="layer-detail-content" data-layer-content="4">
+                <span class="detail-badge">Camada 4 - Barreira Delicada</span>
+                <h3>Vegetais Delicados e Sementes</h3>
+                <p>Tomates-cereja, pepino, cenoura ralada, nozes ou chia. Esta camada serve como uma barreira física protetora para que a umidade das camadas de baixo não suba e atinja as folhas verdes superiores.</p>
+              </div>
+              <div class="layer-detail-content" data-layer-content="3">
+                <span class="detail-badge">Camada 3 - Sustentação</span>
+                <h3>Grãos, Massas e Carboidratos</h3>
+                <p>Quinoa, arroz integral, grão-de-bico, lentilha ou macarrão integral. Absorvem apenas a quantidade ideal de umidade e dão a base de energia que faz a salada realmente sustentar seu almoço.</p>
+              </div>
+              <div class="layer-detail-content" data-layer-content="2">
+                <span class="detail-badge">Camada 2 - O Selo de Sabor</span>
+                <h3>Proteínas e Ingredientes Pesados</h3>
+                <p>Frango desfiado, atum, ovos cozidos, cubos de queijo ou tofu. Ao ficarem logo acima do molho, as proteínas absorvem o tempero de forma lenta, marinhando e criando um selo pesado que impede o molho de subir.</p>
+              </div>
+              <div class="layer-detail-content" data-layer-content="1">
+                <span class="detail-badge">Camada 1 - A Base</span>
+                <h3>O Molho (Abaixo de Tudo)</h3>
+                <p>Azeite, vinagretes cremosos, iogurte ou molho de mostarda e mel. Ao ficar no fundo do pote, o molho nunca encosta nas folhas durante o armazenamento. Na hora de comer, basta chacoalhar o pote e misturar tudo fresco!</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="hero__pricing-column">
-        <div class="pricing-security-badge" style="margin-bottom: 16px;">
+    </section>
+
+    <!-- ============================================================ ECONOMIZOMETRO ============================================================ -->
+    <section class="section section--dark section--eco" data-screen-label="03 Economizômetro">
+      <div class="container container--narrow">
+        <header class="section-head section-head--light">
+          <span class="eyebrow eyebrow--gold">Faça as contas</span>
+          <h2>O Economizômetro Dinâmico</h2>
+          <p class="lead">Substitua o almoço de aplicativo ou restaurante caro por potes saudáveis que custam menos de R$ 8,00 por dia. Veja sua economia na tela:</p>
+        </header>
+
+        <div class="eco-calculator">
+          <div class="eco-slider-container">
+            <label for="ecoRange" class="eco-slider-label">Quanto você gasta hoje com almoço por dia?</label>
+            <div class="eco-slider-row">
+              <span class="slider-limit">R$ 15</span>
+              <input type="range" id="ecoRange" min="15" max="60" value="35" class="eco-slider" aria-label="Gasto médio com almoço por dia">
+              <span class="slider-limit">R$ 60</span>
+            </div>
+            <div class="eco-current-value">Gasto atual: <strong id="ecoCurrentText">R$ 35,00 / dia</strong></div>
+          </div>
+
+          <div class="eco-results">
+            <div class="eco-result-card">
+              <div class="eco-result-card__label">Economia Mensal</div>
+              <div class="eco-result-card__value" id="ecoMonthValue">R$ 594,00</div>
+              <div class="eco-result-card__sub">(Considerando 22 almoços)</div>
+            </div>
+            <div class="eco-result-card eco-result-card--featured">
+              <div class="eco-result-card__label">Economia Anual</div>
+              <div class="eco-result-card__value" id="ecoYearValue">R$ 7.128,00</div>
+              <div class="eco-result-card__sub">🔥 Dinheiro limpo no seu bolso</div>
+            </div>
+          </div>
+
+          <div class="eco-bar-comparison">
+            <div class="eco-bar-row">
+              <span class="eco-bar-name">Gasto Mensal Atual:</span>
+              <div class="eco-bar-track">
+                <div class="eco-bar-fill eco-bar-fill--current" id="ecoBarCurrent" style="width: 100%;">R$ 770,00</div>
+              </div>
+            </div>
+            <div class="eco-bar-row">
+              <span class="eco-bar-name">Gasto com Salada no Pote:</span>
+              <div class="eco-bar-track">
+                <div class="eco-bar-fill eco-bar-fill--pote" id="ecoBarPote" style="width: 22.8%;">R$ 176,00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-footer-box">
+            <p>💡 <strong>Esta calculadora prova</strong>: Com apenas <strong>1 dia</strong> de economia, você já paga o investimento do <strong>Kit (por apenas R$ 10,00)</strong> e o resto do ano é só lucro e saúde!</p>
+            <a href="#ofertas-anchor" class="btn btn--primary btn--lg eco-cta-btn">GARANTIR ACESSO POR R$ 10,00</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ BENEFICIOS COMPACTOS ============================================================ -->
+    <section class="section section--light" data-screen-label="04 Benefícios">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Praticidade Real</span>
+          <h2>O Que Muda na Sua Rotina</h2>
+          <p class="lead">Muito mais do que receitas saudáveis: é a liberdade de não precisar pensar no almoço todos os dias.</p>
+        </header>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-card__icon">⏱️</div>
+            <h3>1 Hora no Domingo = Semana Resolvida</h3>
+            <p>Prepare os 5 potes de segunda a sexta assistindo à sua série favorita. Depois, é só abrir a geladeira e comer.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-card__icon">💰</div>
+            <h3>Economize mais de R$300 por Mês</h3>
+            <p>Pare de dar dinheiro para aplicativos e taxas de entrega às 11h. Cada salada no pote de alta sustância custa menos de R$8.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-card__icon">🍃</div>
+            <h3>Dura 7 Dias sem Murchar</h3>
+            <p>Usando o nosso método preciso de empilhamento de camadas, os ingredientes mantêm a textura e sabor originais do 1º ao 7º dia.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-card__icon">🥗</div>
+            <h3>101 Receitas Completas</h3>
+            <p>Opções proteicas, fits, veganas, gourmets e exóticas. Um cardápio incrivelmente rico para você nunca enjoar do sabor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ PROVA SOCIAL MARQUEE ============================================================ -->
+    <section class="section section--marquee" data-screen-label="05 Fotos reais">
+      <div class="container marquee-head-container">
+        <span class="eyebrow">Da cozinha das alunas</span>
+        <h2>📸 Veja Fotos Reais Enviadas no Grupo ↓</h2>
+        <p class="lead">Sem fotos de banco de dados. Saladas montadas por pessoas reais que aplicaram o método em casa.</p>
+      </div>
+      <div class="marquee-track-wrapper">
+        <div class="marquee-track" id="marquee-track">
+          <!-- Populated by app.js -->
+        </div>
+        <div class="marquee-scrim-left"></div>
+        <div class="marquee-scrim-right"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ DEPOIMENTOS ============================================================ -->
+    <section class="section section--cream" data-screen-label="06 Depoimentos">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Histórias reais</span>
+          <h2>Quem Já Experimentou Recomenda</h2>
+          <p class="lead">Milhares de alunas já economizaram tempo e melhoraram a saúde com os nossos potes.</p>
+        </header>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Gente, eu já tentei de tudo pra comer melhor e sempre abandonava. Aí experimentei as saladas no pote e mudou tudo. Preparo no domingo enquanto assisto série e de segunda a sexta tá pronto na geladeira. Maravilhoso!"</p>
+            <div class="t-user">
+              <img class="t-avatar" src="assets/avatars/cleide.webp" alt="Cleide R." width="44" height="44" loading="lazy" decoding="async">
+              <div class="t-meta">
+                <span class="t-name">Cleide R.</span>
+                <span class="t-tag">Comprou o Completo</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Confesso que achei que a folha ia murchar, mas o método de colocar o molho por baixo e as folhas em cima funciona perfeitamente! Salada crocante até sexta. A salada com molho thai é viciante de tão gostosa!"</p>
+            <div class="t-user">
+              <img class="t-avatar" src="assets/avatars/marcia.webp" alt="Marcia T." width="44" height="44" loading="lazy" decoding="async">
+              <div class="t-meta">
+                <span class="t-name">Marcia T.</span>
+                <span class="t-tag">Comprou o Simples</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">"Tô na menopausa e precisava regular minha alimentação. Com esses potes economizei muito tempo. Já sobrou uns R$400 de marmitas este mês. Meu marido até começou a comer salada comigo!"</p>
+            <div class="t-user">
+              <img class="t-avatar" src="assets/avatars/rosangela.webp" alt="Rosangela F." width="44" height="44" loading="lazy" decoding="async">
+              <div class="t-meta">
+                <span class="t-name">Rosangela F.</span>
+                <span class="t-tag">Comprou o Completo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ O QUE ESTÁ INCLUÍDO (CARROSSEL) ============================================================ -->
+    <section class="section section--light" data-screen-label="07 O Que Você Recebe">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Conteúdo do Kit</span>
+          <h2>101 Receitas Divididas em 6 Volumes</h2>
+          <p class="lead">Livros digitais (PDF) completos, fáceis de ler no celular, prontos para baixar e usar em instantes.</p>
+          <p class="mobile-swipe-tip">👉 Arraste para o lado para ver todos os volumes</p>
+        </header>
+
+        <!-- Swipeable Horizontal Mobile Carousel -->
+        <div class="carousel-wrapper">
+          <div class="covers-carousel scroll-snap-x">
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-1-fundamentos.webp" alt="Volume 1" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 1</span>
+                <h3>Fundamentos</h3>
+                <p>O guia inicial indispensável: como escolher os potes, higienizar e aplicar o método das 5 camadas.</p>
+              </div>
+            </div>
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-2-saladas-completas.webp" alt="Volume 2" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 2</span>
+                <h3>Saladas Completas</h3>
+                <p>20 saladas super nutritivas que realmente valem por uma refeição e trazem saciedade por horas.</p>
+              </div>
+            </div>
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-3-sabores-do-mundo.webp" alt="Volume 3" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 3</span>
+                <h3>Sabores do Mundo</h3>
+                <p>20 receitas internacionais com temperos marcantes (italiana, mexicana, tailandesa, grega e mais).</p>
+              </div>
+            </div>
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-4-alto-teor-proteico.webp" alt="Volume 4" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 4</span>
+                <h3>Alto Proteico</h3>
+                <p>20 saladas com alto índice de proteínas para quem treina e quer manter ou ganhar massa magra.</p>
+              </div>
+            </div>
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-5-vegano.webp" alt="Volume 5" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 5</span>
+                <h3>100% Vegano</h3>
+                <p>20 receitas plant-based totalmente livres de proteína animal, deliciosamente nutritivas e coloridas.</p>
+              </div>
+            </div>
+            <div class="book-card">
+              <div class="book-card__img"><img src="assets/covers/vol-6-gourmet.webp" alt="Volume 6" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="book-card__body">
+                <span class="book-card__tag">Volume 6</span>
+                <h3>Edição Gourmet</h3>
+                <p>20 saladas refinadas com combinações de queijos, frutas especiais e castanhas para jantares finos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ BONUS EXCLUSIVOS (CARROSSEL) ============================================================ -->
+    <section class="section section--cream" data-screen-label="08 Bônus Exclusivos">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow eyebrow--gold">Super Oferta</span>
+          <h2>Bônus Inclusos no Pacote Completo</h2>
+          <p class="lead">Conteúdos extras que sozinhos valem muito mais do que o preço cobrado hoje.</p>
+          <p class="mobile-swipe-tip">👉 Arraste para o lado para ver todos os bônus</p>
+        </header>
+
+        <!-- Swipeable Horizontal Mobile Carousel for Bonuses -->
+        <div class="carousel-wrapper">
+          <div class="bonuses-carousel scroll-snap-x">
+            <div class="bonus-card">
+              <div class="bonus-card__badge">BÔNUS 1</div>
+              <div class="bonus-card__img"><img src="assets/bonuses/bonus-1-15-molhos.webp" alt="Bônus 1" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="bonus-card__body">
+                <h3>15 Molhos de Restaurante</h3>
+                <p class="bonus-price"><span class="old-price">R$27,00</span> <strong class="free-badge">GRÁTIS</strong></p>
+                <p class="bonus-desc">O tempero é tudo. Aprenda 15 molhos incríveis de restaurantes para dar sabor maravilhoso ao pote.</p>
+              </div>
+            </div>
+            <div class="bonus-card">
+              <div class="bonus-card__badge">BÔNUS 2</div>
+              <div class="bonus-card__img"><img src="assets/bonuses/bonus-2-sistema-5-potes.webp" alt="Bônus 2" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="bonus-card__body">
+                <h3>O Sistema dos 5 Potes</h3>
+                <p class="bonus-price"><span class="old-price">R$27,00</span> <strong class="free-badge">GRÁTIS</strong></p>
+                <p class="bonus-desc">Passo a passo exato para cozinhar tudo em lote no domingo de forma cronometrada e guardar com segurança.</p>
+              </div>
+            </div>
+            <div class="bonus-card">
+              <div class="bonus-card__badge">BÔNUS 3</div>
+              <div class="bonus-card__img"><img src="assets/bonuses/bonus-3-guia-proteina.webp" alt="Bônus 3" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="bonus-card__body">
+                <h3>Guia de Proteínas no Pote</h3>
+                <p class="bonus-price"><span class="old-price">R$27,00</span> <strong class="free-badge">GRÁTIS</strong></p>
+                <p class="bonus-desc">Como calcular e preparar frango, carne, grãos e ovos de forma a não estragarem na geladeira.</p>
+              </div>
+            </div>
+            <div class="bonus-card">
+              <div class="bonus-card__badge">BÔNUS 4</div>
+              <div class="bonus-card__img"><img src="assets/bonuses/bonus-4-lista-compras.webp" alt="Bônus 4" width="220" height="308" loading="lazy" decoding="async"></div>
+              <div class="bonus-card__body">
+                <h3>Lista de Compras + Conservação</h3>
+                <p class="bonus-price"><span class="old-price">R$19,90</span> <strong class="free-badge">GRÁTIS</strong></p>
+                <p class="bonus-desc">Vá ao mercado sabendo exatamente o que comprar para não desperdiçar um único centavo na semana.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bonuses-total-pill">
+          🎁 Total acumulado de bônus: <span class="strike">R$ 100,90</span> <strong class="highlight">Ganhos de graça no Pacote Completo</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ OFERTAS (TABELA DE PREÇOS) ============================================================ -->
+    <section class="section section--light" id="ofertas-anchor" data-screen-label="09 Ofertas">
+      <div class="container container--narrow">
+        <header class="section-head" id="oferta">
+          <span class="eyebrow eyebrow--gold">Escolha seu pacote</span>
+          <h2>Acesso Imediato ao Método</h2>
+          <p class="lead">Receba o kit no seu e-mail imediatamente após a confirmação. Pagamento único, sem mensalidades.</p>
+        </header>
+
+        <div class="pricing-container">
+          <!-- Pacote Simples -->
+          <article class="price-card price-card--simples">
+            <div class="price-card__header">
+              <span class="price-card__eyebrow">PACOTE BÁSICO</span>
+              <h3>Pacote Simples</h3>
+              <p class="price-card__desc">Ideal para quem quer apenas as receitas principais do kit.</p>
+            </div>
+            
+            <ul class="price-card__features">
+              <li class="feat-included">✓ 101 Receitas em 6 Volumes PDF</li>
+              <li class="feat-included">✓ Acesso imediato no e-mail</li>
+              <li class="feat-included">✓ Suporte direto por e-mail</li>
+              <li class="feat-excluded">✗ Sem os 4 bônus exclusivos</li>
+            </ul>
+
+            <div class="price-card__pricing">
+              <span class="price-old">De R$ 49,90 por</span>
+              <div class="price-new">R$ 10<span class="price-cents">,00</span></div>
+              <span class="price-sub">pagamento único</span>
+            </div>
+
+            <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" class="btn btn--secondary btn--full pricing-cta-btn" data-checkout="simples" aria-label="Adquirir Pacote Simples">
+              COMEÇAR COM O BÁSICO
+            </a>
+          </article>
+
+          <!-- Pacote Completo (Recomendado) -->
+          <article class="price-card price-card--completo price-card--featured" id="completeCard">
+            <div class="price-card__badge">🏆 MAIS ESCOLHIDO</div>
+            <div class="price-card__header">
+              <span class="price-card__eyebrow price-card__eyebrow--gold">MÉTODO COMPLETO</span>
+              <h3>Pacote Completo</h3>
+              <p class="price-card__desc">O kit definitivo com receitas, guias de preparação e todos os bônus inclusos.</p>
+            </div>
+            
+            <ul class="price-card__features">
+              <li class="feat-included">✓ 101 Receitas em 6 Volumes PDF</li>
+              <li class="feat-included">✓ Acesso imediato vitalício</li>
+              <li class="feat-included">✓ Suporte prioritário 24 horas</li>
+              <li class="feat-bonus">🎁 BÔNUS: 15 Molhos de Restaurante</li>
+              <li class="feat-bonus">🎁 BÔNUS: O Sistema dos 5 Potes</li>
+              <li class="feat-bonus">🎁 BÔNUS: Guia de Proteínas no Pote</li>
+              <li class="feat-bonus">🎁 BÔNUS: Lista de Compras + Conservação</li>
+            </ul>
+
+            <div class="price-card__pricing">
+              <span class="price-old">Valor real acumulado: R$ 150,80</span>
+              <div class="price-row">
+                <span class="price-prefix">por apenas</span>
+                <div class="price-new">R$ 24<span class="price-cents">,90</span></div>
+              </div>
+              <span class="price-sub">pagamento único · acesso vitalício</span>
+            </div>
+
+            <a href="https://ggcheckout.app/checkout/v5/mCjx0h3Zfx9CKfe7vAgf" class="btn btn--primary btn--xl btn--full pricing-cta-btn" data-checkout="completo" aria-label="Adquirir Pacote Completo com Bônus">
+              QUERO O PACOTE COMPLETO
+            </a>
+          </article>
+        </div>
+
+        <div class="security-badges">
           <span>🔒 Compra 100% Segura</span>
-          <span class="sep">·</span>
-          <span>⚡ Acesso Imediato</span>
-          <span class="sep">·</span>
+          <span class="sec-sep">·</span>
+          <span>⚡ Liberação Imediata</span>
+          <span class="sec-sep">·</span>
           <span>↺ 7 Dias de Garantia</span>
         </div>
-        <div class="pricing-grid">
-          <article class="price-card price-card--simple">
-            <div>
-              <div class="price-card__eyebrow">Pacote</div>
-              <h3>Simples</h3>
-            </div>
-            <ul class="price-card__feats">
-              <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
-              <li><span class="check">✓</span><span>Acesso imediato</span></li>
-              <li class="feat--dim"><span class="check check--x">×</span><span>Sem os bônus exclusivos</span></li>
-            </ul>
-            <div class="price-card__price-block">
-              <div class="price-card__from-strike">De R$49,90 por apenas</div>
-              <div class="price-card__big">R$10<span class="price-card__big-cents">,00</span></div>
-              <div class="price-card__sub">pagamento único</div>
-            </div>
-            <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" class="btn btn--secondary btn--full" data-checkout="simples" aria-label="Começar com o básico — Pacote Simples por R$10,00">COMEÇAR COM O BÁSICO</a>
-          </article>
+      </div>
+    </section>
 
-          <article class="price-card price-card--pro" id="completeCard">
-            <div class="price-card__badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
-              MAIS ESCOLHIDO
-            </div>
-            <div>
-              <div class="price-card__eyebrow">Pacote</div>
-              <h3>Completo</h3>
-            </div>
-            <ul class="price-card__feats">
-              <li><span class="check">✓</span><span>101 Receitas em 6 Volumes</span></li>
-              <li><span class="check">✓</span><span>Atualizações semanais</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ 15 Molhos de Restaurante</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ Sistema dos 5 Potes</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ Guia de Proteínas no Pote</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ Lista de Compras + Conservação</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ Guia de Temperos</span></li>
-              <li><span class="gift-icon">🎁</span><span>+ Receitas para Dietas Específicas</span></li>
-            </ul>
-            <div class="price-card__price-block">
-              <div class="price-card__from-strike">Valor total: R$150,80</div>
-              <div class="price-card__pro-price-row">
-                <span class="price-card__pro-price-prefix">por apenas</span>
-                <span class="price-card__big">R$24<span class="price-card__big-cents">,90</span></span>
-              </div>
-              <div class="price-card__sub">pagamento único · acesso vitalício</div>
-            </div>
-            <a href="https://ggcheckout.app/checkout/v5/mCjx0h3Zfx9CKfe7vAgf" class="btn btn--primary btn--xl btn--full" data-checkout="completo" aria-label="Quero o pacote completo — Pacote Completo por R$24,90">QUERO O PACOTE COMPLETO</a>
-          </article>
+    <!-- ============================================================ GARANTIA ============================================================ -->
+    <section class="section section--cream section--guarantee" data-screen-label="10 Garantia">
+      <div class="container container--narrow">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-content">
+            <span class="eyebrow">Risco Zero</span>
+            <h2>Garantia Incondicional de 7 Dias</h2>
+            <p>Abaixo a insegurança. Teste as receitas, prepare os potes e sinta a facilidade. Se em até 7 dias você achar que o método não é para você, basta nos enviar um único e-mail e <strong>devolvemos 100% do seu dinheiro</strong>. Sem perguntas, sem enrolação.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ============================================================ FAQ ============================================================ -->
+    <section class="section section--light" data-screen-label="11 FAQ">
+      <div class="container container--narrow">
+        <header class="section-head">
+          <span class="eyebrow">Dúvidas Comuns</span>
+          <h2>Tudo O Que Você Precisa Saber</h2>
+          <p class="lead">Tem alguma dúvida? Encontre a resposta rápida abaixo:</p>
+        </header>
 
-
-  <!-- ============================================================ BENEFITS ============================================================ -->
-  <section class="section section--cream" data-screen-label="07 Benefícios">
-    <div class="container">
-      <header class="section-head">
-        <div class="eyebrow">Por que funciona</div>
-        <h2>O Que Muda na Sua Rotina</h2>
-        <p class="lead">Não é só uma coleção de receitas. É uma forma de comer bem sem pensar — todos os dias da semana.</p>
-      </header>
-      <div class="benefits-compact-grid">
-        <article class="benefit-row">
-          <div class="benefit-row__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="benefit-row__body">
-            <h3>Resolva a semana inteira em 1 hora</h3>
-            <p>Prepare 5 potes no domingo enquanto assiste série. Segunda a sexta, almoço pronto na geladeira.</p>
-          </div>
-        </article>
-        <article class="benefit-row">
-          <div class="benefit-row__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
-          </div>
-          <div class="benefit-row__body">
-            <h3>Economize R$300+ por mês</h3>
-            <p>Pare de gastar R$30 a R$50 por dia em marmita. Cada pote sai por menos de R$8 e mata a fome de verdade.</p>
-          </div>
-        </article>
-        <article class="benefit-row">
-          <div class="benefit-row__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20M12 2v20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/></svg>
-          </div>
-          <div class="benefit-row__body">
-            <h3>Dura até 7 dias na geladeira</h3>
-            <p>Com o método das camadas, a folha não murcha e o molho não escorre. Fresquinha a semana toda.</p>
-          </div>
-        </article>
-        <article class="benefit-row">
-          <div class="benefit-row__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-          </div>
-          <div class="benefit-row__body">
-            <h3>101 receitas — nunca repete</h3>
-            <p>Receitas veganas, gourmet, fit e internacionais. Cardápio diferente todo dia.</p>
-          </div>
-        </article>
-        <article class="benefit-row" style="grid-column: span 2;">
-          <div class="benefit-row__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <div class="benefit-row__body">
-            <h3>Sem complicação, sem pote especial</h3>
-            <p>Ingredientes comuns de mercado e use qualquer pote com tampa que já tem em casa.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ STUDENT SALADS MARQUEE ============================================================ -->
-  <section class="marquee" data-screen-label="04 Saladas das alunas">
-    <div class="container marquee__head">
-      <div class="eyebrow">Da cozinha das alunas</div>
-      <h2 style="font-size: var(--t-h1); color: var(--green-900); margin: 0 auto; max-width: 760px;">📸 Veja as fotos reais de quem já está montando os potes ↓</h2>
-      <p class="lead" style="font-size: var(--t-lead); color: var(--fg-2); max-width: 580px; margin: 14px auto 0; line-height: 1.5;">Fotos reais enviadas por alunas no grupo. Cada pote, uma receita do kit.</p>
-    </div>
-    <div class="marquee__wrap">
-      <div class="marquee__track" id="marquee-track"></div>
-      <div class="marquee__fade marquee__fade--l"></div>
-      <div class="marquee__fade marquee__fade--r"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================ TESTIMONIALS ============================================================ -->
-  <section class="section section--cream" data-screen-label="05 Depoimentos">
-    <div class="container">
-      <header class="section-head">
-        <div class="eyebrow">Quem já está usando</div>
-        <h2>Resultados reais de quem comprou</h2>
-      </header>
-      <div class="testimonials-grid">
-        <article class="testimonial">
-          <div class="stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="testimonial__text">"Gente, eu já tentei de tudo pra comer melhor durante a semana e sempre abandonava no meio. Aí experimentei as saladas no pote e mudou tudo. Preparo no domingo enquanto assisto série e na segunda já tá tudo pronto. Minha filha até pediu pra eu fazer pra ela também!"</p>
-          <div class="testimonial__who">
-            <img class="testimonial__avatar" src="assets/avatars/cleide.webp" alt="Cleide R." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Cleide R.</div><div class="testimonial__age">44 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
-          </div>
-        </article>
-        <article class="testimonial">
-          <div class="stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="testimonial__text">"Confesso que fiquei desconfiada no começo, achei que ia ser mais uma coisa que eu compraria e não usaria. Mas as receitas são tão fáceis que até eu, que não tenho jeito na cozinha, consegui. A salada com molho de amendoim thai virou minha favorita, como toda semana."</p>
-          <div class="testimonial__who">
-            <img class="testimonial__avatar" src="assets/avatars/marcia.webp" alt="Marcia T." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Marcia T.</div><div class="testimonial__age">52 anos · <span class="testimonial__tag testimonial__tag--simples">Comprou o Pacote Simples</span></div></div>
-          </div>
-        </article>
-        <article class="testimonial">
-          <div class="stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="testimonial__text">"Tô na menopausa e tava sofrendo pra manter uma alimentação decente no dia a dia. Essas saladas me salvaram. Já economizei uns R$400 de marmita só esse mês. E o melhor — meu marido parou de torcer o nariz pra salada quando viu as receitas que eu tava fazendo."</p>
-          <div class="testimonial__who">
-            <img class="testimonial__avatar" src="assets/avatars/rosangela.webp" alt="Rosangela F." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Rosangela F.</div><div class="testimonial__age">47 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
-          </div>
-        </article>
-        <article class="testimonial">
-          <div class="stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="testimonial__text">"Trabalho fora o dia todo e quando chegava em casa não tinha energia pra cozinhar nada saudável. Agora abro a geladeira e já tem cinco potes me esperando. Parece bobagem mas isso mudou minha semana de verdade. Me sinto mais disposta, mais leve."</p>
-          <div class="testimonial__who">
-            <img class="testimonial__avatar" src="assets/avatars/patricia.webp" alt="Patricia M." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Patricia M.</div><div class="testimonial__age">43 anos · <span class="testimonial__tag testimonial__tag--simples">Comprou o Pacote Simples</span></div></div>
-          </div>
-        </article>
-        <article class="testimonial">
-          <div class="stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="testimonial__text">"O que me conquistou foi a salada Big Mac no pote. Minha neta viu e achou que era brincadeira, mas provou e pediu a receita! Hoje faço pra mim e pra ela. Nunca pensei que ia falar isso sobre salada, mas é viciante mesmo."</p>
-          <div class="testimonial__who">
-            <img class="testimonial__avatar" src="assets/avatars/silvana.webp" alt="Silvana C." width="52" height="52" loading="lazy" decoding="async">
-            <div><div class="testimonial__name">Silvana C.</div><div class="testimonial__age">49 anos · <span class="testimonial__tag testimonial__tag--completo">Comprou o Pacote Completo</span></div></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ VOLUMES ============================================================ -->
-  <section class="section section--white section--volumes" data-screen-label="02 O Que Você Vai Receber">
-    <div class="container">
-      <header class="section-head">
-        <div class="eyebrow">O Kit Completo</div>
-        <h2>O Que Está Incluído no Seu Kit</h2>
-        <p class="lead">São 101 receitas únicas, organizadas em 6 volumes, com ingredientes simples de qualquer mercado.</p>
-      </header>
-      <div class="carousel-container">
-        <div class="volumes-grid">
-          <!-- FIRST SET -->
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-1-fundamentos.webp" alt="Volume 1: Fundamentos" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 1</div>
-              <h3>Fundamentos</h3>
-              <p class="volume-card__desc">Tudo sobre salada no pote + primeira receita exclusiva.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receita 1</div>
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button class="faq-item__btn" type="button">
+              <span>Como recebo o acesso ao material?</span>
+              <span class="faq-chev">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__inner">Imediatamente após a aprovação do pagamento, você recebe os dados de acesso por e-mail. Todo o conteúdo é digital em formato PDF de alta qualidade, pronto para download no celular, tablet ou computador.</div>
             </div>
           </div>
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-2-saladas-completas.webp" alt="Volume 2: Saladas Completas" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 2</div>
-              <h3>Saladas Completas</h3>
-              <p class="volume-card__desc">20 receitas com proteína em cada pote.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 2 a 21</div>
+          <div class="faq-item">
+            <button class="faq-item__btn" type="button">
+              <span>Preciso de potes de vidro caros?</span>
+              <span class="faq-chev">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__inner">Não! Embora potes de vidro sejam ótimos para conservar, você pode usar qualquer pote de plástico comum com tampa que tiver em casa. O grande segredo não é o pote, mas sim as camadas!</div>
             </div>
           </div>
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-3-sabores-do-mundo.webp" alt="Volume 3: Sabores do Mundo" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 3</div>
-              <h3>Sabores do Mundo</h3>
-              <p class="volume-card__desc">20 receitas gourmet inspiradas em culinárias internacionais.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 22 a 41</div>
+          <div class="faq-item">
+            <button class="faq-item__btn" type="button">
+              <span>A salada realmente dura 7 dias fresca?</span>
+              <span class="faq-chev">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__inner">Sim. Quando você monta a salada no pote seguindo rigorosamente a ordem que ensinamos no método das camadas, as folhas ficam secas no topo e duram de 5 a 7 dias perfeitamente frescas, sem murchar.</div>
             </div>
           </div>
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-4-alto-teor-proteico.webp" alt="Volume 4: Alto Teor Proteico" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 4</div>
-              <h3>Alto Teor Proteico</h3>
-              <p class="volume-card__desc">20 receitas para quem treina e quer emagrecer.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 42 a 61</div>
+          <div class="faq-item">
+            <button class="faq-item__btn" type="button">
+              <span>As receitas usam ingredientes difíceis?</span>
+              <span class="faq-chev">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__inner">De forma alguma. Todas as 101 receitas foram criadas pensando no bolso e na praticidade do brasileiro: usam ingredientes comuns de feiras e supermercados de bairro.</div>
             </div>
           </div>
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-5-vegano.webp" alt="Volume 5: 100% Vegano" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 5</div>
-              <h3>100% Vegano</h3>
-              <p class="volume-card__desc">20 receitas plant-based coloridas e nutritivas.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 62 a 81</div>
-            </div>
-          </div>
-          <div class="volume-card">
-            <div class="volume-card__cover"><img src="assets/covers/vol-6-gourmet.webp" alt="Volume 6: Edição Gourmet" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 6</div>
-              <h3>Edição Gourmet</h3>
-              <p class="volume-card__desc">20 receitas sofisticadas para ocasiões especiais.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 82 a 101</div>
-            </div>
-          </div>
-          <!-- SECOND SET FOR INFINITE LOOP -->
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-1-fundamentos.webp" alt="Volume 1: Fundamentos" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 1</div>
-              <h3>Fundamentos</h3>
-              <p class="volume-card__desc">Tudo sobre salada no pote + primeira receita exclusiva.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receita 1</div>
-            </div>
-          </div>
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-2-saladas-completas.webp" alt="Volume 2: Saladas Completas" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 2</div>
-              <h3>Saladas Completas</h3>
-              <p class="volume-card__desc">20 receitas com proteína em cada pote.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 2 a 21</div>
-            </div>
-          </div>
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-3-sabores-do-mundo.webp" alt="Volume 3: Sabores do Mundo" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 3</div>
-              <h3>Sabores do Mundo</h3>
-              <p class="volume-card__desc">20 receitas gourmet inspiradas em culinárias internacionais.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 22 a 41</div>
-            </div>
-          </div>
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-4-alto-teor-proteico.webp" alt="Volume 4: Alto Teor Proteico" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 4</div>
-              <h3>Alto Teor Proteico</h3>
-              <p class="volume-card__desc">20 receitas para quem treina e quer emagrecer.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 42 a 61</div>
-            </div>
-          </div>
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-5-vegano.webp" alt="Volume 5: 100% Vegano" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 5</div>
-              <h3>100% Vegano</h3>
-              <p class="volume-card__desc">20 receitas plant-based coloridas e nutritivas.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 62 a 81</div>
-            </div>
-          </div>
-          <div class="volume-card" aria-hidden="true">
-            <div class="volume-card__cover"><img src="assets/covers/vol-6-gourmet.webp" alt="Volume 6: Edição Gourmet" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="volume-card__body">
-              <div class="volume-card__tag">Volume 6</div>
-              <h3>Edição Gourmet</h3>
-              <p class="volume-card__desc">20 receitas sofisticadas para ocasiões especiais.</p>
-              <div class="volume-card__count"><span class="dot"></span> Receitas 82 a 101</div>
+          <div class="faq-item">
+            <button class="faq-item__btn" type="button">
+              <span>Qual a diferença entre o pacote Simples e Completo?</span>
+              <span class="faq-chev">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__inner">O Pacote Simples (R$10) inclui exclusivamente os 6 volumes principais com as 101 receitas. O Pacote Completo (R$24,90) inclui todos os volumes + suporte prioritário + os 4 bônus exclusivos essenciais (molhos gourmet, sistema de lote, guia de conservação de proteínas e lista inteligente).</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ BONUSES ============================================================ -->
-  <section class="section section--cream section--bonuses" data-screen-label="03 Bônus Exclusivos">
-    <div class="container">
-      <header class="section-head">
-        <div class="eyebrow">Apenas no Pacote Completo</div>
-        <h2>4 Bônus Exclusivos no Pacote Completo</h2>
-        <p class="lead">Conteúdos extras que sozinhos valem mais do que o pacote inteiro.</p>
-      </header>
-      <div class="carousel-container">
-        <div class="bonuses-grid">
-          <!-- FIRST SET -->
-          <div class="bonus-card">
-            <div class="bonus-card__badge">BÔNUS 1</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-1-15-molhos.webp" alt="15 Molhos de Restaurante Feitos em Casa" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>15 Molhos de Restaurante Feitos em Casa</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-card__badge">BÔNUS 2</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-2-sistema-5-potes.webp" alt="O Sistema dos 5 Potes" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>O Sistema dos 5 Potes</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-card__badge">BÔNUS 3</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-3-guia-proteina.webp" alt="Guia de Proteínas no Pote" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>Guia de Proteínas no Pote</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-card__badge">BÔNUS 4</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-4-lista-compras.webp" alt="Lista de Compras + Guia de Conservação" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>Lista de Compras + Guia de Conservação</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$19,90</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <!-- SECOND SET FOR INFINITE LOOP -->
-          <div class="bonus-card" aria-hidden="true" tabindex="-1">
-            <div class="bonus-card__badge">BÔNUS 1</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-1-15-molhos.webp" alt="15 Molhos de Restaurante Feitos em Casa" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>15 Molhos de Restaurante Feitos em Casa</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card" aria-hidden="true" tabindex="-1">
-            <div class="bonus-card__badge">BÔNUS 2</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-2-sistema-5-potes.webp" alt="O Sistema dos 5 Potes" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>O Sistema dos 5 Potes</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card" aria-hidden="true" tabindex="-1">
-            <div class="bonus-card__badge">BÔNUS 3</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-3-guia-proteina.webp" alt="Guia de Proteínas no Pote" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>Guia de Proteínas no Pote</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$27,00</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonus-card" aria-hidden="true" tabindex="-1">
-            <div class="bonus-card__badge">BÔNUS 4</div>
-            <div class="bonus-card__cover"><img src="assets/bonuses/bonus-4-lista-compras.webp" alt="Lista de Compras + Guia de Conservação" width="720" height="1018" loading="lazy" decoding="async"></div>
-            <div class="bonus-card__body">
-              <h3>Lista de Compras + Guia de Conservação</h3>
-              <div class="bonus-card__price">
-                <span class="bonus-card__strike">R$19,90</span>
-                <span class="bonus-card__free">GRÁTIS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bonuses-total">
-        <svg class="icon icon--gold" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
-        <span>Valor total dos bônus: <span class="bonuses-total__strike">R$100,90</span> <strong class="bonuses-total__highlight">incluídos gratuitamente no Pacote Completo.</strong></span>
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- ============================================================ GUARANTEE ============================================================ -->
-  <section class="guarantee" data-screen-label="08 Garantia">
-    <div class="guarantee__row">
-      <div class="guarantee__shield">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-      </div>
-      <div>
-        <div class="guarantee__eyebrow">Risco zero</div>
-        <h2>Garantia Incondicional de 7 Dias</h2>
-        <p>Se por qualquer motivo você não gostar, é só mandar um e-mail em até 7 dias e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================ FAQ ============================================================ -->
-  <section class="section section--cream" data-screen-label="09 Dúvidas Frequentes">
-    <div class="container container--narrow">
-      <header class="section-head">
-        <div class="eyebrow">Dúvidas frequentes</div>
-        <h2>Tudo o que você precisa saber</h2>
-      </header>
-      <div class="faq-list">
-        <div class="faq-item is-open">
-          <button class="faq-item__btn" type="button"><span>Como recebo o material?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">Assim que o pagamento for confirmado você recebe o link de acesso imediato por e-mail. Tudo em PDF, pronto para baixar e usar.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__btn" type="button"><span>Preciso de potes especiais?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">Não. Qualquer pote com tampa que você já tem em casa funciona perfeitamente — vidro, plástico, grande ou pequeno.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__btn" type="button"><span>Quanto tempo dura a salada no pote?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">Quando montada corretamente seguindo o método das camadas, a salada dura de 5 a 7 dias fresquinha na geladeira.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__btn" type="button"><span>As receitas são difíceis de fazer?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">Super fáceis. Todas usam ingredientes simples de qualquer mercado e o passo a passo é claro e direto.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__btn" type="button"><span>Qual a diferença entre o Pacote Simples e o Completo?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">O Simples inclui os 6 volumes com as 101 receitas. O Completo inclui tudo isso mais 4 bônus exclusivos: 15 molhos de restaurante, o sistema dos 5 potes, guia de proteínas e lista de compras + guia de conservação.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__btn" type="button"><span>E se eu não gostar?</span>
-            <svg class="faq-item__chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-item__answer"><div class="faq-item__answer-inner">Você tem 7 dias de garantia incondicional. Se não ficar satisfeito por qualquer motivo, devolvemos 100% do valor investido.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
   </main>
 
   <!-- ============================================================ FOOTER ============================================================ -->
-  <footer class="footer" data-screen-label="10 Rodapé">
+  <footer class="footer" data-screen-label="12 Rodapé">
     <div class="footer__grid">
-      <div>
-        <img class="footer__mockup" src="assets/mockups/footer-mockup.webp" alt="Kit completo: todos os volumes e bônus" width="1400" height="788" loading="lazy" decoding="async">
+      <div class="footer__mockup-col">
+        <img class="footer__mockup" src="assets/mockups/footer-mockup.webp" alt="Kit Completo Saladas no Pote" width="1400" height="788" loading="lazy" decoding="async">
       </div>
-      <div>
-        <div class="footer__eyebrow">O Kit Completo</div>
+      <div class="footer__content-col">
+        <span class="footer__eyebrow">Método 101 Receitas</span>
         <h3>Saladas no Pote que Substituem o Almoço</h3>
-        <p>Material 100% digital — acesso imediato após a compra. Suporte por e-mail em até 24h.</p>
-        <div class="footer__info">
-          <div class="footer__info-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <p>Material 100% digital com entrega e download imediato. Economia, saúde e praticidade direto na sua geladeira.</p>
+        
+        <div class="footer__support">
+          <div class="support-item">
+            <span class="support-icon">✉️</span>
             <a href="mailto:moreira.digital2026@gmail.com">moreira.digital2026@gmail.com</a>
           </div>
-          <div class="footer__info-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-            7 dias de garantia incondicional
+          <div class="support-item">
+            <span class="support-icon">🛡️</span>
+            <span>7 dias de garantia incondicional</span>
           </div>
         </div>
-        <div class="footer__links">
+
+        <div class="footer__legal">
           <a href="#" data-legal="privacy">Política de Privacidade</a>
-          <span class="sep">•</span>
+          <span class="legal-sep">•</span>
           <a href="#" data-legal="terms">Termos de Uso</a>
         </div>
       </div>
     </div>
-    <div class="footer__copy">© 2026 — Saladas no Pote que Substituem o Almoço · Todos os direitos reservados.</div>
+    <div class="footer__bottom">
+      <p>© 2026 — 101 Receitas de Saladas no Pote · Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <!-- Special Offer Upsell Modal -->
-  <div id="upsellModal" class="upsell-modal" role="dialog" aria-modal="true" aria-labelledby="upsellModalTitle">
-    <div class="upsell-modal__card">
-      <button id="upsellCloseBtn" class="upsell-modal__close" type="button" aria-label="Fechar oferta especial e continuar no site">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="upsell-modal__tag">🎉 Oferta Especial Para Você</div>
-      
-      <h2 id="upsellModalTitle" class="upsell-modal__title">Espera — por só R$4,90 a mais você leva o Kit Completo</h2>
+  <!-- ============================================================ POPUPS & MODALS ============================================================ -->
 
+  <!-- Special Offer Downsell Modal -->
+  <div id="upsellModal" class="upsell-modal" role="dialog" aria-modal="true" aria-labelledby="upsellTitle">
+    <div class="upsell-modal__card">
+      <button id="upsellCloseBtn" class="upsell-modal__close" type="button" aria-label="Fechar modal e continuar">×</button>
+      
+      <span class="upsell-modal__badge">⚠️ AGUARDE — OFERTA ÚNICA</span>
+      
+      <h2 id="upsellTitle">Antes de finalizar: por R$ 4,90 a mais você leva tudo — não só as receitas.</h2>
       
       <div class="upsell-modal__mockup-wrapper">
-        <img class="upsell-modal__mockup" src="assets/mockups/footer-mockup.webp" alt="Todos os 11 Livros do Kit Completo" width="400" height="225" loading="lazy" decoding="async">
+        <img class="upsell-modal__mockup" src="assets/mockups/footer-mockup.webp" alt="Livros e bônus completo" width="300" height="169" loading="lazy" decoding="async">
       </div>
-      
-      <div class="upsell-modal__price-block">
-        <span class="upsell-modal__price-old">De R$24,90</span>
-        <span class="upsell-modal__price-new">por apenas <strong>R$14,90</strong></span>
-        <div class="upsell-modal__price-savings">Economia de R$10,00 — só agora</div>
-      </div>
-      
+
+      <p class="upsell-modal__teaser" style="text-align: left; margin: 16px auto; font-size: 14px; line-height: 1.5; color: var(--fg-body); max-width: 90%;">Quem compra só o básico tem as receitas. Quem leva o Pacote Completo tem o Sistema dos 5 Potes, os 15 Molhos Gourmet e mais 7 guias que transformam qualquer salada em refeição de restaurante.</p>
+
       <ul class="upsell-modal__checklist">
-        <li>✅ 101 Receitas de Saladas no Pote</li>
-        <li>✅ Atualizações semanais</li>
         <li>🎁 + 7 Bônus exclusivos</li>
       </ul>
-      
+
+      <div class="upsell-modal__pricing">
+        <span class="upsell-old">De R$24,90 por</span>
+        <div class="upsell-new">R$ 14<span class="upsell-cents">,90</span></div>
+        <span class="upsell-sub">Economia imediata de R$10,00</span>
+      </div>
+
       <div class="upsell-modal__actions">
-        <a href="https://ggcheckout.app/checkout/v5/01OJapY4cRtXYabJHJBw" id="upsellMainBtn" class="btn btn--primary btn--full upsell-modal__btn-main">
-          ADICIONAR OS BÔNUS POR R$4,90 A MAIS →
+        <a href="https://ggcheckout.app/checkout/v5/01OJapY4cRtXYabJHJBw" id="upsellMainBtn" class="btn btn--primary btn--full upsell-btn-add">
+          ✅ QUERO O PACOTE COMPLETO POR R$ 14,90
         </a>
-        <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" id="upsellSecBtn" class="upsell-modal__btn-sec">
-          Não, prefiro só as receitas por R$10,00
+        <a href="https://ggcheckout.app/checkout/v5/8xmBzxW06Rt3P3rPK1k7" id="upsellSecBtn" class="upsell-btn-skip">
+          Não, prefiro ficar só com as receitas por R$ 10,00
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Legal modals -->
-  <div id="legalModal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+  <!-- Legal Modals -->
+  <div id="legalModal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
     <div class="legal-modal__panel">
-      <header class="legal-modal__head">
-        <h3 id="legalModalTitle"></h3>
-        <button class="legal-modal__close" type="button" aria-label="Fechar" data-legal-close>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+      <header class="legal-modal__header">
+        <h3 id="legalTitle">Termos de Uso</h3>
+        <button class="legal-modal__close" type="button" aria-label="Fechar" data-legal-close>×</button>
       </header>
       <div class="legal-modal__body" id="legalModalBody"></div>
     </div>
   </div>
 
-  <!-- Sales social-proof popup -->
+  <!-- Realtime Sales Proof Notification -->
   <div id="salePop" class="sale-pop" role="status" aria-live="polite">
-    <div class="sale-pop__icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-    </div>
+    <div class="sale-pop__icon">🛍️</div>
     <div class="sale-pop__body">
-      <div class="sale-pop__name" id="salePopName"></div>
-      <div class="sale-pop__action" id="salePopAction"></div>
+      <div class="sale-pop__name" id="salePopName">Mariana S.</div>
+      <div class="sale-pop__action" id="salePopAction">Comprou o <strong>Pacote Completo</strong></div>
       <div class="sale-pop__meta">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span id="salePopMeta"></span>
+        <span class="sale-pop__location" id="salePopMeta">São Paulo / SP</span>
+        <span class="sale-pop__time">· 2 min atrás</span>
       </div>
     </div>
-    <button class="sale-pop__close" type="button" aria-label="Fechar" onclick="window.__closeSalePop && window.__closeSalePop()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <button class="sale-pop__close" type="button" aria-label="Fechar" onclick="window.__closeSalePop && window.__closeSalePop()">×</button>
+  </div>
+
+  <!-- Sticky Mobile Checkout Bar -->
+  <div class="floating-cta" id="floatingCta">
+    <button class="btn btn--primary btn--full" id="btnFloatingCta">
+      QUERO MEU KIT AGORA
+      <span class="floating-cta__sub">Por apenas R$ 10,00 · Liberação Imediata</span>
     </button>
   </div>
 
-  <!-- Floating Mobile CTA -->
-  <div class="floating-cta" id="floatingCta">
-    <button class="btn btn--primary btn--full" id="btnFloatingCta">QUERO MEU KIT AGORA</button>
-  </div>
-
-  <!-- ============================================================ APP SCRIPT (defer-loaded) ============================================================ -->
+  <!-- ============================================================ SCRIPTS ============================================================ -->
   <script defer src="app.js"></script>
 
-  <!-- Third-party trackers — deferred (loaded after main content is interactive) -->
+  <!-- Deferred Analytics Trackers -->
   <script>
-    // Bootstrapping placeholders so calls during page-load don't throw
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     window.clarity = window.clarity || function(){(window.clarity.q=window.clarity.q||[]).push(arguments);};
 
-    // Load all trackers AFTER the page has loaded
     window.addEventListener('load', function() {
       setTimeout(function() {
         // ---- Google Analytics ----
@@ -851,12 +752,11 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, 'clarity', 'script', 'wtbxs7yd38');
 
-      }, 1200); // wait 1.2s after page load — keeps LCP/TBT clean
+      }, 1200);
     });
   </script>
 
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585314683156291&ev=PageView&noscript=1"/></noscript>
-
 
 </body>
 </html>
