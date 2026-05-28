@@ -450,30 +450,54 @@
   // ---------- Floating CTA Scroll Listener ----------
   function initFloatingCta() {
     const cta = document.getElementById('floatingCta');
-    const hero = document.querySelector('.hero');
-    const oferta = document.getElementById('oferta');
-    if (!cta || !hero) return;
-    
-    window.addEventListener('scroll', () => {
-      const heroHeight = hero.offsetHeight;
-      const scrollPos = window.scrollY;
-      
-      let shouldShow = scrollPos > heroHeight * 0.5;
-      
-      if (oferta) {
-        const ofertaTop = oferta.offsetTop;
-        // Oculta o botão flutuante quando o topo da seção de ofertas entra no campo de visão da tela
-        if (scrollPos + window.innerHeight > ofertaTop + 100) {
-          shouldShow = false;
+    const completeCard = document.getElementById('completeCard');
+    if (!cta || !completeCard) return;
+
+    // Ação do clique: rola de volta para o pacote completo com efeito suave e dispara o pulso de foco
+    const btn = document.getElementById('btnFloatingCta');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        completeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Dispara uma piscada rápida/pulso de foco premium no card
+        completeCard.classList.remove('animate-pulse-once');
+        void completeCard.offsetWidth; // Força reflow do navegador
+        completeCard.classList.add('animate-pulse-once');
+      });
+    }
+
+    // Monitora a visibilidade do Pacote Completo na tela.
+    // O CTA só deve aparecer quando o usuário passar do Pacote Completo (rolando para baixo).
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // O card saiu pelo topo da tela se o seu bottom for menor que 0
+          const isScrolledPast = entry.boundingClientRect.bottom < 0;
+          if (!entry.isIntersecting && isScrolledPast) {
+            cta.classList.add('is-visible');
+          } else {
+            cta.classList.remove('is-visible');
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0
+      });
+      observer.observe(completeCard);
+    } else {
+      // Fallback em navegadores muito antigos sem IntersectionObserver
+      window.addEventListener('scroll', () => {
+        const cardRect = completeCard.getBoundingClientRect();
+        // O card saiu pelo topo da tela se o bottom estiver acima do topo do viewport
+        const isScrolledPast = cardRect.bottom < 0;
+        if (isScrolledPast) {
+          cta.classList.add('is-visible');
+        } else {
+          cta.classList.remove('is-visible');
         }
-      }
-      
-      if (shouldShow) {
-        cta.classList.add('is-visible');
-      } else {
-        cta.classList.remove('is-visible');
-      }
-    });
+      });
+    }
   }
 
   // ---------- Staggered Pricing Cards Focus Pulse Observer ----------

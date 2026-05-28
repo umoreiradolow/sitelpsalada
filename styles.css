@@ -247,6 +247,77 @@ p { margin: 0; text-wrap: pretty; }
   gap: 16px;
 }
 
+/* Mini Hero Carousel of Covers */
+.hero-carousel-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 10px 0 6px;
+  overflow: hidden;
+  position: relative;
+  /* Soft fade on edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+@media (max-width: 880px) {
+  .hero-carousel-container {
+    margin: 10px auto 4px;
+  }
+}
+.hero-carousel-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 8px 0;
+  animation: hero-marquee 28s linear infinite;
+  will-change: transform;
+}
+@keyframes hero-marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.hero-carousel-card {
+  flex: 0 0 115px; /* 30% smaller than 170px */
+  background: var(--white);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-1);
+}
+.hero-carousel-card img {
+  width: 100%;
+  aspect-ratio: 5/7;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line-1);
+  margin-bottom: 6px;
+}
+.hero-carousel-card .card-tag {
+  font-size: 8.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--green-700);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.hero-carousel-card .card-tag--bonus {
+  color: var(--gold-700);
+}
+.hero-carousel-card h4 {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--neutral-800);
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
 @media (min-width: 881px) {
   .hero__content-column {
     text-align: left;
@@ -1133,7 +1204,7 @@ p { margin: 0; text-wrap: pretty; }
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 32px;
+    gap: 16px;
   }
   .benefits-compact-grid {
     grid-template-columns: 1fr;
@@ -1607,7 +1678,7 @@ p { margin: 0; text-wrap: pretty; }
   font-weight: 700;
   color: var(--green-700);
   display: block;
-  margin: 0 auto 24px;
+  margin: 0 auto 8px;
   text-align: center;
 }
 
@@ -1632,7 +1703,7 @@ p { margin: 0; text-wrap: pretty; }
   gap: 8px;
   font-size: 13px;
   color: var(--fg-2);
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .hero__stars-sold {
